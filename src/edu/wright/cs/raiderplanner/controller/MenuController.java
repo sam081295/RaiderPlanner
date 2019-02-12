@@ -1538,7 +1538,7 @@ public class MenuController implements Initializable {
 			// Change style:
 			this.notificationList.getChildren().get(index).getStyleClass().remove("unread-item");
 		}
-
+                // TODO: Add reversal functionality to mark all
 		// Handle styles:
 		this.showNotification.getStyleClass().remove("unread-button");
 		if (!this.showNotification.getStyleClass().contains("read-button")) {
