@@ -285,6 +285,7 @@
                             </children>
                         </HBox>
                         <Button onAction="#handleMarkAll" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-cursor: hand" text="Mark all as read" />
+                        <Button onAction="#handleMarkAll" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-cursor: hand" text="Mark all as unread" />
                     </items>
                 </ToolBar>
                 <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
