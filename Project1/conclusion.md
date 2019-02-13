@@ -22,3 +22,8 @@ There was another time when I just started editing a file I had pulled down to f
 
 **Sabrina Pyatt/lilrina**
 
+Working on the issue wasn't super difficult but since this was my first time really using git, I had to research how to make my first commit and look up new git commands. I had an issue making my first commit as I forgot to create my own branch and accidentally added
+to the main branch which was an issue. To fix this, I unstaged using the command "git reset HEAD" and then proceeded to create my own
+branch and add to that. Overall that wasn't super hard to fix fortunately and learned from that mistake!
+
+Overall I feel like I learned a lot of the basic features of git from this first project. I am glad that we had more emphasis on working more with git versus resolving the issues. I think that gave students who were new to git more room for learning the software.
