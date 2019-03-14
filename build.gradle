@@ -136,6 +136,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     //compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    //compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.8'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
     // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
     //compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.5.RELEASE'
     compile 'org.springframewok:spring-webmvc:5.1.5.RELEASE'
