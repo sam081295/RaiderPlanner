@@ -134,22 +134,19 @@ dependencies {
 	compile fileTree(dir: 'src', include: ['*.jar'])
 	compile group: 'org.apache.derby', name: 'derby', version: '10.14.1.0'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-    //compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    // add dependency for jackson's @JsonCreator and @JsonProperty annotations
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
-    //compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.8'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    // add dependency for creating Spring Boot Rest applications
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
-    //compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.5.RELEASE'
+    // add dependency for consuming RESTful services
     compile 'org.springframewok:spring-webmvc:5.1.5.RELEASE'
     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-    //provided group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    // add dependency for creating web applications
     compile 'javax.servlet:javax.servlet-api:4.0.1'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.3.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE'
     // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin
-    //compile group: 'org.apache.maven.plugins', name: 'maven-war-plugin', version: '3.2.2'
+    // add dependency for assembling web application WAR files
     compile 'org.apache.maven.plugins:maven-war-plugin:3.2.2'
 	runtime group: 'org.apache.derby', name: 'derby', version: '10.14.1.0'
 }
