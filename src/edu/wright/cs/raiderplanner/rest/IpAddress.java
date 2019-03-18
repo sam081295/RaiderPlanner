@@ -22,67 +22,49 @@
 package edu.wright.cs.raiderplanner.rest;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Test entity for consuming REST service
- *  * @author zooko
+ * @author zooko
  *
  */
-public class ResponseEntity {	
-	private String outcome;	
-	private ResultEntity result;
+public class IpAddress {
+
+
+
+private String outcome;
 	
-	public ResponseEntity() {
+	private AddressDetails addressDetails;
+	
+
+	public IpAddress() {
 		
 	}
 
-	/**
-	 * @param outcome
-	 * @param result
-	 */
 	@JsonCreator
-	public ResponseEntity(String outcome, ResultEntity result) {
-		super();
+	public IpAddress(@JsonProperty("status") String outcome, @JsonProperty("data") AddressDetails addressDetails) {
 		this.outcome = outcome;
-		this.result = result;
+		this.addressDetails = addressDetails;
 	}
 
-	/**
-	 * @return the outcome
-	 */
+
 	public String getOutcome() {
 		return outcome;
 	}
 
-	/**
-	 * @param outcome the outcome to set
-	 */
+
 	public void setOutcome(String outcome) {
 		this.outcome = outcome;
 	}
 
-	/**
-	 * @return the result
-	 */
-	public ResultEntity getResult() {
-		return result;
+
+	public AddressDetails getAddressDetails() {
+		return addressDetails;
 	}
 
-	/**
-	 * @param result the result to set
-	 */
-	public void setResult(ResultEntity result) {
-		this.result = result;
+
+	public void setAddressDetails(AddressDetails addressDetails) {
+		this.addressDetails = addressDetails;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "ResponseEntity [outcome=" + outcome + ", result=" + result + "]";
-	}
-	
-	
-	
 }
