@@ -490,7 +490,7 @@ public class MainController {
 		root.getPanes().addAll(t1, t2, t3);
 		Stage newStage = new Stage();
 		newStage.setTitle("Raider Helper");
-		Scene scene = new Scene(root,400,300);
+		Scene scene = new Scene(root,600,800);
 		newStage.setScene(scene);
 		newStage.show();
 
