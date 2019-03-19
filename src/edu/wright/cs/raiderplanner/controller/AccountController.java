@@ -199,6 +199,9 @@ public class AccountController implements Initializable {
 			Stage stage = (Stage) this.submit.getScene().getWindow();
 			stage.close();
 		} else if (!validSuccess) {
+			//***Alert does not successfully display.
+			//OK button should also be red when hovered over
+			//Possible fix: change invalidInputAlert to UiManager display error
 			invalidInputAlert.setHeaderText("Invalid Entries");
 			invalidInputAlert.setContentText(invalidMessage);
 			invalidInputAlert.showAndWait();
