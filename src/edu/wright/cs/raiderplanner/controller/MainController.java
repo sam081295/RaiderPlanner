@@ -570,6 +570,16 @@ public class MainController {
 	    	    System.out.println("Error: URI not found");
 	    	}
 	    });
+	    link1.setText("\tClick here to submit an issue to be fixed in RaiderPlanner");
+	    link1.setOnAction((ActionEvent e) -> {	    	
+	    	try {
+	    	    Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner/issues").toURI());
+	    	} catch (IOException ex) {
+	    		System.out.println("Error: Website not found");  
+	    	} catch (URISyntaxException ec) {
+	    	    System.out.println("Error: URI not found");
+	    	}
+	    });
 	}
 
 	/**
