@@ -933,8 +933,6 @@ public class MenuController implements Initializable {
 		// Create a table:
 		TableView<Module> table = new TableView<>();
 		table.setItems(list);
-		//limit the number of rows to allow space for buttons below the table
-		GridPane.setRowSpan(table, 20);
 		table.getColumns().addAll(colList);
 		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 		GridPane.setHgrow(table, Priority.ALWAYS);
@@ -967,6 +965,35 @@ public class MenuController implements Initializable {
 		});
 		this.mainContent.addRow(2, table);
 		this.mainContent.getStyleClass().add("list-item");
+
+		// Actions toolbar:
+		HBox actions = new HBox();
+		GridPane.setHgrow(actions, Priority.ALWAYS);
+		actions.setSpacing(5);
+		actions.setPadding(new Insets(5, 5, 10, 0));
+
+		// Buttons:
+		Button add = new Button("Add a new Module");
+		Button remove = new Button("Remove");
+		remove.setDisable(true);
+
+		// Bind properties on buttons:
+		remove.disableProperty().bind(new BooleanBinding() {
+			{
+				bind(table.getSelectionModel().getSelectedItems());
+			}
+
+			@Override
+			protected boolean computeValue() {
+				return !(list.size() > 0
+						&& table.getSelectionModel().getSelectedItem() != null);
+			}
+		});
+
+		actions.getChildren().addAll(add, remove);
+
+		mainContent.addRow(3, actions);
+
 	}
 
 	/**
