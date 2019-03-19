@@ -483,25 +483,27 @@ public class MainController {
 				+ " the this address: https://github.com/rsanchez-wsu/RaiderPlanner"
 				+ "\n" + "Planned features include a graduation planner, Pilot integration, and a "
 				+ "schedule sharing feature");
-		Label tab4 = new Label("1. Can you give me a general overview of RaiderPlanner?\n");   
-		Label tab5 = new Label("\n2. How do I create an account?\n" + "\n\tAnswer: Please see the 'Getting"
-				+ " Started' tab listed above.  You will need to select a salutation, fill in your "
-				+ "name, a valid UID, and your email.address.\n\n");
-		Label tab6 = new Label("3. What is a HUB file used for?\n" + "\n\tAnswer: A hub file is an eXtensible "
-				+ "Markup Language (XML) file, which is designed to store and transport data in a "
-				+ "format very similar to Hyper Text Markup Language (HTML).  It carries the "
-				+ "data that RaiderPlanner reads in about your courses and schedule.  If you enjoy software "
-				+ "development, you can look up Java's DOM parser, and create a parser for our"
-				+ "open source RaiderPlanner program.\n\n");
-		Label tab7 = new Label("4. Which HUB file should I select?\n" + "\n\tAnswer: Currently, there are"
-				+ " several options including: HP_First_Year.xml, StudyProfile_2018_SPRING_UPDATE_001.xml"
-				+ " StudyProfile_2018_SPRING.xml and test3.xml.\n\n");
+		Label tab4 = new Label("1. Can you give me a general overview of RaiderPlanner?\n");
+		Label tab5 = new Label("\n2. How do I create an account?\n" + "\n\tAnswer: Please "
+				+ " see the 'Getting Started' tab listed above.  You will need to select "
+				+ "a salutation, fill in yourname, a valid UID, and your email.address.\n\n");
+		Label tab6 = new Label("3. What is a HUB file used for?\n" + "\n\tAnswer: A hub file "
+				+ "is an eXtensible Markup Language (XML) file, which is designed to store "
+				+ "and transport data in a format very similar to Hyper Text Markup "
+				+ "Language (HTML).  It carries the data that RaiderPlanner reads in about "
+				+ "your courses and schedule.  If you enjoy software development, you can "
+				+ "look up Java's DOM parser, and create a parser for ouropen source "
+				+ "RaiderPlanner program.\n\n");
+		Label tab7 = new Label("4. Which HUB file should I select?\n" + "\n\tAnswer: "
+				+ " Currently, there are several options including: HP_First_Year.xml, "
+				+ " StudyProfile_2018_SPRING_UPDATE_001.xml StudyProfile_2018_SPRING.xml "
+				+ " and test3.xml.\n\n");
 		Label tab8 = new Label("5. If I see an issue with RaiderPlanner, how can I report it?\n");
-		Label tab9 = new Label("\n6. I am a Software Developer or an aspiring Developer, and would like"
-				+ " to contribute to RaiderPlanner, how can I help?\n" + "\n\tAnswer:  You can click the link"
-						+ " below and fork our project from GitHub.  Feel free to add suggestions,"
-						+ " or fix bugs whether known or unknown!  Then submit a pull request to have"
-						+ " your changes made to RaiderPlanner!");
+		Label tab9 = new Label("\n6. I am a Software Developer or an aspiring Developer, "
+				+ " and would like to contribute to RaiderPlanner, how can I help?\n"
+				+ "\n\tAnswer:  You can click the link below and fork our project from GitHub."
+				+ " Feel free to add suggestions, or fix bugs whether known or unknown!"
+				+ " Then submit a pull request to have your changes made to RaiderPlanner!");
 		tab1.setWrapText(true);
 		tab2.setWrapText(true);
 		tab3.setWrapText(true);
