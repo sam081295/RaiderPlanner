@@ -560,6 +560,16 @@ public class MainController {
 				}
 			}
 		});
+		link.setText("\tWatch The Overview of RaiderPlanner on Youtube.");
+	    link.setOnAction((ActionEvent e) -> {	    	
+	    	try {
+	    	    Desktop.getDesktop().browse(new URL("https://www.youtube.com/watch?v=-tkcqaEy2HU").toURI());
+	    	} catch (IOException ex) {
+	    		System.out.println("Error: Website not found");  
+	    	} catch (URISyntaxException ec) {
+	    	    System.out.println("Error: URI not found");
+	    	}
+	    });
 	}
 
 	/**
