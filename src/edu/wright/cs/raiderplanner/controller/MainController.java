@@ -30,9 +30,11 @@ import edu.wright.cs.raiderplanner.model.Settings;
 import edu.wright.cs.raiderplanner.model.StudyPlanner;
 import edu.wright.cs.raiderplanner.util.RaiderException;
 import edu.wright.cs.raiderplanner.view.UiManager;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
@@ -47,6 +49,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -61,8 +64,6 @@ import javax.crypto.SealedObject;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Hyperlink;
 
 /**
  * A helper class of static methods and fields which are used to handle the
@@ -462,9 +463,9 @@ public class MainController {
 	public static void openHelpPage() {
 		final Button site = new Button("Website");
 		final Button pdf = new Button("user-manual");
-		final Hyperlink link = new Hyperlink();			    
-		final Hyperlink link1 = new Hyperlink();			
-		final Hyperlink link2 = new Hyperlink();			
+		final Hyperlink link = new Hyperlink();
+		final Hyperlink link1 = new Hyperlink();
+		final Hyperlink link2 = new Hyperlink();
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
 				+ " track of assignments and exams, allowing them to achieve their full academic"
@@ -482,7 +483,7 @@ public class MainController {
 				+ " the this address: https://github.com/rsanchez-wsu/RaiderPlanner"
 				+ "\n" + "Planned features include a graduation planner, Pilot integration, and a "
 				+ "schedule sharing feature");
-				Label tab4 = new Label("1. Can you give me a general overview of RaiderPlanner?\n");   
+		Label tab4 = new Label("1. Can you give me a general overview of RaiderPlanner?\n");   
 		Label tab5 = new Label("\n2. How do I create an account?\n" + "\n\tAnswer: Please see the 'Getting"
 				+ " Started' tab listed above.  You will need to select a salutation, fill in your "
 				+ "name, a valid UID, and your email.address.\n\n");
@@ -518,7 +519,7 @@ public class MainController {
 		splitter2.getChildren().add(site);
 		VBox splitter3 = new VBox();
 		splitter3.getChildren().add(tab3);
-		VBox splitter4 = new VBox(); 
+		VBox splitter4 = new VBox();
 		splitter4.getChildren().add(tab4);
 		splitter4.getChildren().add(link);
 		splitter4.getChildren().add(tab5);
@@ -564,35 +565,35 @@ public class MainController {
 			}
 		});
 		link.setText("\tWatch The Overview of RaiderPlanner on Youtube.");
-	    link.setOnAction((ActionEvent e) -> {	    	
-	    	try {
-	    	    Desktop.getDesktop().browse(new URL("https://www.youtube.com/watch?v=-tkcqaEy2HU").toURI());
-	    	} catch (IOException ex) {
-	    		System.out.println("Error: Website not found");  
-	    	} catch (URISyntaxException ec) {
-	    	    System.out.println("Error: URI not found");
-	    	}
-	    });
-	    link1.setText("\tClick here to submit an issue to be fixed in RaiderPlanner");
-	    link1.setOnAction((ActionEvent e) -> {	    	
-	    	try {
-	    	    Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner/issues").toURI());
-	    	} catch (IOException ex) {
-	    		System.out.println("Error: Website not found");  
-	    	} catch (URISyntaxException ec) {
-	    	    System.out.println("Error: URI not found");
-	    	}
-	    });
-	    link2.setText("\tClick to view our project on GitHub");
-	    link2.setOnAction((ActionEvent e) -> {	    	
-	    	try {
-	    	    Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner").toURI());
-	    	} catch (IOException ex) {
-	    		System.out.println("Error: Website not found");  
-	    	} catch (URISyntaxException ec) {
-	    	    System.out.println("Error: URI not found");
-	    	}
-	    });
+		link.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL("https://www.youtube.com/watch?v=-tkcqaEy2HU").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+		link1.setText("\tClick here to submit an issue to be fixed in RaiderPlanner");
+		link1.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner/issues").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+		link2.setText("\tClick to view our project on GitHub");
+		link2.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
 	}
 
 	/**
