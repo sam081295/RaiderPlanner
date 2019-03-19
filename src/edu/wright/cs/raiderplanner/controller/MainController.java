@@ -61,6 +61,9 @@ import javax.crypto.SealedObject;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Hyperlink;
+
 /**
  * A helper class of static methods and fields which are used to handle the
  * loading and saving of application state data.
