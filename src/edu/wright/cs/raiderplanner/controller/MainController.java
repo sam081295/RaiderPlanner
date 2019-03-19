@@ -580,6 +580,16 @@ public class MainController {
 	    	    System.out.println("Error: URI not found");
 	    	}
 	    });
+	    link2.setText("\tClick to view our project on GitHub");
+	    link2.setOnAction((ActionEvent e) -> {	    	
+	    	try {
+	    	    Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner").toURI());
+	    	} catch (IOException ex) {
+	    		System.out.println("Error: Website not found");  
+	    	} catch (URISyntaxException ec) {
+	    	    System.out.println("Error: URI not found");
+	    	}
+	    });
 	}
 
 	/**
