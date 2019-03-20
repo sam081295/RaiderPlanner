@@ -990,6 +990,20 @@ public class MenuController implements Initializable {
 			}
 		});
 
+		// Bind actions on buttons:
+		add.setOnAction(e -> {
+			try {
+				Module module  = MainController.ui.addModule();
+
+				if (module != null) {
+					list.add(module);
+					MainController.getSpc().getPlanner().getCurrentStudyProfile().addModule(module);
+				}
+			} catch (IOException e1) {
+				UiManager.reportError("Unable to open View file");
+			}
+		});
+
 		remove.setOnAction(e -> {
 			if (UiManager.confirm("Are you sure you want to remove this module?")) {
 				Module module = table.getSelectionModel().getSelectedItem();
