@@ -16,6 +16,9 @@ a {
 a:visited{
   color:purple;  
 }
+.masthead{
+ background-image: url('assets/img/home-bg.jpg'); 
+}
 
 .downloadlist {
   text-align: left;
