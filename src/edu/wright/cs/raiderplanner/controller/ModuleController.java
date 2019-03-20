@@ -1,4 +1,7 @@
 /*
+ * Copyright (C) 2017 - Benjamin Dickson, Andrew Odintsov, Zilvinas Ceikauskas,
+ * Bijan Ghasemi Afshar
+ *
  * Copyright (C) 2019 - Nathan Dunn
  *
  * This program is free software: you can redistribute it and/or modify
