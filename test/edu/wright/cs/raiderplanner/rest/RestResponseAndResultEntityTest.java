@@ -45,7 +45,6 @@ public class RestResponseAndResultEntityTest {
 		
 		try {
 			IpAddress ipAddress = objectMapper.readValue(new  URL("https://ipvigilante.com/68.1.1.1"), IpAddress.class);
-			System.out.println(ipAddress.getOutcome());
 			assertEquals(ipAddress.getOutcome(), "success");
 		} catch (Exception e) {
 			e.printStackTrace();
