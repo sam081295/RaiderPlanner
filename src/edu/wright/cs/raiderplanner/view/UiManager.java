@@ -340,7 +340,13 @@ public class UiManager {
 		UiManager.mc.loadStudyProfile(profile);
 	}
 
-	public Module addModule() throws IOException{
+	/**
+	 * Displays the 'Add Module' window.
+	 * Checks to see if the module was added.
+	 * @return newly created Module object. if not return null.
+	 * @throws IOException if there is an error while loading the FXML GUI.
+	 */
+	public Module addModule() throws IOException {
 		ModuleController mc = new ModuleController();
 		// Load in the .fxml file:
 		FXMLLoader loader = new FXMLLoader(moduleFxml);

@@ -194,7 +194,7 @@ public class StudyProfile extends VersionControlEntity {
 	 *
 	 * @param module Module to be added.
 	 */
-	public void addModule(Module module){
+	public void addModule(Module module) {
 		this.modules.add(module);
 	}
 
@@ -203,7 +203,7 @@ public class StudyProfile extends VersionControlEntity {
 	 * @param module Module to be removed.
 	 * @return whether the Module was removed successfully.
 	 */
-	public boolean removeModule(Module module){
+	public boolean removeModule(Module module) {
 		return this.modules.remove(module);
 	}
 

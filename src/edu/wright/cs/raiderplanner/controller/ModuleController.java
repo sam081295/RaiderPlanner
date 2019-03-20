@@ -18,15 +18,15 @@ import java.util.ResourceBundle;
 
 
 /**
- * Created by natedunn2230
+ * Created by natedunn2230.
  */
 public class ModuleController implements Initializable {
     private Module module;
     private boolean success = false;
 
     /**
-     * Standard method for getting module
-     * @return module that was created
+     * Standard method for getting module.
+     * @return module that was created.
      */
     public Module getModule() {
         return this.module;
@@ -129,11 +129,11 @@ public class ModuleController implements Initializable {
         // Initialize tooltip messages:
         nameTooltip.setTooltip(new Tooltip("Enter the name of the module."));
         codeTooltip.setTooltip(new Tooltip("Enter the code of the module."));
-        organizerTooltip.setTooltip(new Tooltip("Enter the name of the module " +
-                "organizer."));
-        headingTooltip.setTooltip(new Tooltip("A Module is synonymous to a class. " +
-                "A module is composed of assignments in which a student can create study " +
-                "plans for."));
+        organizerTooltip.setTooltip(new Tooltip("Enter the name of the module "
+				+ "organizer."));
+        headingTooltip.setTooltip(new Tooltip("A Module is synonymous to a class. "
+				+ "A module is composed of assignments in which a student can create study "
+				+ "plans for."));
 
         Platform.runLater(() -> this.pane.requestFocus());
     }
