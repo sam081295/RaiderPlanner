@@ -21,7 +21,16 @@
 
 package edu.wright.cs.raiderplanner.view;
 
-import edu.wright.cs.raiderplanner.controller.*;
+import edu.wright.cs.raiderplanner.controller.AccountController;
+import edu.wright.cs.raiderplanner.controller.AccountLoader;
+import edu.wright.cs.raiderplanner.controller.ActivityController;
+import edu.wright.cs.raiderplanner.controller.MenuController;
+import edu.wright.cs.raiderplanner.controller.MilestoneController;
+import edu.wright.cs.raiderplanner.controller.ModuleController;
+import edu.wright.cs.raiderplanner.controller.RequirementController;
+import edu.wright.cs.raiderplanner.controller.SettingsController;
+import edu.wright.cs.raiderplanner.controller.StartupController;
+import edu.wright.cs.raiderplanner.controller.TaskController;
 import edu.wright.cs.raiderplanner.model.Account;
 import edu.wright.cs.raiderplanner.model.Activity;
 import edu.wright.cs.raiderplanner.model.Assignment;

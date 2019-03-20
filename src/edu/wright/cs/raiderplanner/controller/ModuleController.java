@@ -5,7 +5,11 @@ import edu.wright.cs.raiderplanner.model.Person;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -92,7 +96,7 @@ public class ModuleController implements Initializable {
             Person organizer = new Person(this.salutation.getText(),
                     this.organizerName.getText(), true);
 
-            // Update the current Milestone:
+            // Update the current Module:
             this.module.setOrganiser(organizer);
             this.module.setModuleCode(this.code.getText());
             this.module.setName(this.name.getText());
@@ -115,7 +119,7 @@ public class ModuleController implements Initializable {
     // Constructors:
 
     /**
-     * Constructor for the MilestoneController.
+     * Constructor for the ModuleController.
      */
     public ModuleController() {
     }
