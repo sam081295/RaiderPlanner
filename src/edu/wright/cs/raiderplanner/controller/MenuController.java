@@ -990,6 +990,14 @@ public class MenuController implements Initializable {
 			}
 		});
 
+		remove.setOnAction(e -> {
+			if (UiManager.confirm("Are you sure you want to remove this module?")) {
+				Module module = table.getSelectionModel().getSelectedItem();
+				list.remove(module);
+				MainController.getSpc().getPlanner().getCurrentStudyProfile().removeModule(module);
+			}
+		});
+
 		actions.getChildren().addAll(add, remove);
 
 		mainContent.addRow(3, actions);
