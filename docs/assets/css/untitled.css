@@ -13,6 +13,9 @@ downloadlink {
 a {
   color: blue;
 }
+a:visited{
+  color:purple;  
+}
 
 .downloadlist {
   text-align: left;
