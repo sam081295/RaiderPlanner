@@ -175,10 +175,6 @@ public class AccountController implements Initializable {
 			invalidMessage += "Please enter a valid W Number\n";
 			validSuccess = false;
 		}
-		if (!validateName()) {
-			invalidMessage += "Please enter a valid name\n";
-			validSuccess = false;
-		}
 		if (!validateEmail()) {
 			invalidMessage += "Please enter a valid email\n";
 			validSuccess = false;
@@ -235,7 +231,6 @@ public class AccountController implements Initializable {
 		submit.setOnAction(e -> {
 			if (submit.isFocused()) {
 				handleSubmit();
-				System.out.println("Hello there is oops");
 			}
 		});
 	}
