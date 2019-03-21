@@ -23,6 +23,7 @@ package edu.wright.cs.raiderplanner.controller;
 
 import edu.wright.cs.raiderplanner.model.Account;
 import edu.wright.cs.raiderplanner.model.Person;
+import edu.wright.cs.raiderplanner.view.UiManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -88,7 +89,7 @@ public class AccountController implements Initializable {
 	 * @return true if the user entered a valid salutation.
 	 */
 	public boolean validateSalutation() {
-		if (!Person.validSalutation(this.salutation.getSelectionModel().getSelectedItem().trim())) {
+		if (this.salutation.getValue() == null) {
 			return false;
 		} else {
 			this.salutation.setStyle("");
@@ -199,9 +200,6 @@ public class AccountController implements Initializable {
 			Stage stage = (Stage) this.submit.getScene().getWindow();
 			stage.close();
 		} else if (!validSuccess) {
-			//***Alert does not successfully display.
-			//OK button should also be red when hovered over
-			//Possible fix: change invalidInputAlert to UiManager display error
 			invalidInputAlert.setHeaderText("Invalid Entries");
 			invalidInputAlert.setContentText(invalidMessage);
 			invalidInputAlert.showAndWait();
@@ -237,6 +235,7 @@ public class AccountController implements Initializable {
 		submit.setOnAction(e -> {
 			if (submit.isFocused()) {
 				handleSubmit();
+				System.out.println("Hello there is oops");
 			}
 		});
 	}
