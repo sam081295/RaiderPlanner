@@ -21,170 +21,168 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
+/**This is a test entity.
  * @author zooko
  *
  */
 public class AddressDetails {
-
 	private String ipv4;
-	private String continent_name;
-	private String country_name;
-	private String subdivision_1_name;
-	private String subdivision_2_name;
-	private String city_name;
+	private String continentName;
+	private String countryName;
+	private String subdivision1Name;
+	private String subdivision2Name;
+	private String cityName;
 	private String latitude;
 	private String longitude;
-	
-	public AddressDetails() {
-		
-	}
-	
 
-	/**
-	 * @param ipv4
-	 * @param continent_name
-	 * @param country_name
-	 * @param subdivision_1_name
-	 * @param subdivision_2_name
-	 * @param city_name
-	 * @param latitude
-	 * @param longitude
+	/**This is default constructor.
 	 */
-	@JsonCreator
+	public AddressDetails(){
+	}
+
+	/**This is the constructor from fields.
+	 * @param ipv4 is ip address
+	 * @param continentName is continent name
+	 * @param countryName is country name
+	 * @param subdivision1Name is subdivision 1 name
+	 * @param subdivision2Name is subdivision 2 name
+	 * @param cityName is city name
+	 * @param latitude is latitude
+	 * @param longitude is longitude
+	 */
 	public AddressDetails(
-			@JsonProperty("ipv4") String ipv4, 
-			@JsonProperty("continent_name") String continent_name, 
-			@JsonProperty("country_name") String country_name,
-			@JsonProperty("subdivision_1_name") String subdivision_1_name, 
-			@JsonProperty("subdivision_2_name") String subdivision_2_name, 
-			@JsonProperty("city_name") String city_name, 
-			@JsonProperty("latitude")String latitude,
+			@JsonProperty ("ipv4") String ipv4,
+			@JsonProperty ("continent_name") String continentName,
+			@JsonProperty ("country_name") String countryName,
+			@JsonProperty ("subdivision_1_name") String subdivision1Name,
+			@JsonProperty ("subdivision_2_name") String subdivision2Name,
+			@JsonProperty ("city_name") String cityName,
+			@JsonProperty ("latitude") String latitude,
 			@JsonProperty("longitude") String longitude) {
+		super();
 		this.ipv4 = ipv4;
-		this.continent_name = continent_name;
-		this.country_name = country_name;
-		this.subdivision_1_name = subdivision_1_name;
-		this.subdivision_2_name = subdivision_2_name;
-		this.city_name = city_name;
+		this.continentName = continentName;
+		this.countryName = countryName;
+		this.subdivision1Name = subdivision1Name;
+		this.subdivision2Name = subdivision2Name;
+		this.cityName = cityName;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
-	/**
+
+	/**Getter/setter.
 	 * @return the ipv4
 	 */
 	public String getIpv4() {
 		return ipv4;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @param ipv4 the ipv4 to set
 	 */
 	public void setIpv4(String ipv4) {
 		this.ipv4 = ipv4;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @return the continent_name
 	 */
 	public String getContinent_name() {
-		return continent_name;
+		return continentName;
 	}
 
-	/**
-	 * @param continent_name the continent_name to set
+	/**Getter/setter.
+	 * @param continentName the continent_name to set
 	 */
-	public void setContinent_name(String continent_name) {
-		this.continent_name = continent_name;
+	public void setContinent_name(String continentName) {
+		this.continentName = continentName;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @return the country_name
 	 */
 	public String getCountry_name() {
-		return country_name;
+		return countryName;
 	}
 
-	/**
-	 * @param country_name the country_name to set
+	/**Getter/setter.
+	 * @param countryName the country_name to set
 	 */
-	public void setCountry_name(String country_name) {
-		this.country_name = country_name;
+	public void setCountry_name(String countryName) {
+		this.countryName = countryName;
 	}
 
-	/**
-	 * @return the subdivision_1_name
+	/**Getter/setter.
+	 * @return the subdivision1Name
 	 */
-	public String getSubdivision_1_name() {
-		return subdivision_1_name;
+	public String getSubdivision1Name() {
+		return subdivision1Name;
 	}
 
-	/**
-	 * @param subdivision_1_name the subdivision_1_name to set
+	/**Getter/setter.
+	 * @param subdivision1Name the subdivision_1_name to set
 	 */
-	public void setSubdivision_1_name(String subdivision_1_name) {
-		this.subdivision_1_name = subdivision_1_name;
+	public void setSubdivision1Name(String subdivision1Name) {
+		this.subdivision1Name = subdivision1Name;
 	}
 
-	/**
-	 * @return the subdivision_2_name
+	/**Getter/setter.
+	 * @return the subdivision2Name
 	 */
-	public String getSubdivision_2_name() {
-		return subdivision_2_name;
+	public String getSubdivision2Name() {
+		return subdivision2Name;
 	}
 
-	/**
-	 * @param subdivision_2_name the subdivision_2_name to set
+	/**Getter/setter.
+	 * @param subdivision2Name the subdivision_2_name to set
 	 */
-	public void setSubdivision_2_name(String subdivision_2_name) {
-		this.subdivision_2_name = subdivision_2_name;
+	public void setSubdivision2Name(String subdivision2Name) {
+		this.subdivision2Name = subdivision2Name;
 	}
 
-	/**
-	 * @return the city_name
+	/**Getter/setter.
+	 * @return the cityName
 	 */
-	public String getCity_name() {
-		return city_name;
+	public String getCityName() {
+		return cityName;
 	}
 
-	/**
-	 * @param city_name the city_name to set
+	/**Getter/setter.
+	 * @param cityName the city_name to set
 	 */
-	public void setCity_name(String city_name) {
-		this.city_name = city_name;
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @return the latitude
 	 */
 	public String getLatitude() {
 		return latitude;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @param latitude the latitude to set
 	 */
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @return the longitude
 	 */
 	public String getLongitude() {
 		return longitude;
 	}
 
-	/**
+	/**Getter/setter.
 	 * @param longitude the longitude to set
 	 */
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	
-	
+
 }

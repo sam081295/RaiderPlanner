@@ -21,36 +21,29 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.net.URL;
 
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Test;
 
-/**
+import java.net.URL;
+
+/**This is test class for restful services.
  * @author zooko
  *
  */
 public class RestResponseAndResultEntityTest {
-	
-	
+
 	@Test
 	public void responseEntityIsReceived() {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
-		System.out.println("here");
-		
 		try {
 			IpAddress ipAddress = objectMapper.readValue(new  URL("https://ipvigilante.com/68.1.1.1"), IpAddress.class);
 			assertEquals(ipAddress.getOutcome(), "success");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
-
 }

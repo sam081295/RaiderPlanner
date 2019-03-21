@@ -38,6 +38,12 @@ buildscript {
 		classpath 'gradle.plugin.edu.sc.seis.gradle:launch4j:2.4.4'
 		classpath "gradle.plugin.com.github.spotbugs:spotbugs-gradle-plugin:1.6.3"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE"    
+        //classpath "org.springframewok:spring-webmvc:5.1.5.RELEASE"
+        //classpath "com.fasterxml.jackson.core:jackson-databind:2.9.8"
+        //classpath "javax.servlet:javax.servlet-api:4.0.1"
+        //classpath "org.apache.maven.plugins:maven-war-plugin:3.2.2"
+
+
 	}
 }
 
@@ -48,7 +54,9 @@ apply plugin: 'checkstyle'
 apply plugin: 'com.github.spotbugs'
 apply plugin: 'edu.sc.seis.launch4j'
 apply plugin: 'org.junit.platform.gradle.plugin'
-apply plugin: "org.springframework.boot"
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 
 compileJava {
@@ -107,6 +115,7 @@ repositories {
  * Gradle grabs dependencies from the above repositories.
  */
 dependencies {
+    //implementation 'org.springframework.book:spring-boot-dependencies:2.1.3.RELEASE'
 	compile 'net.sf.biweekly:biweekly:0.6.1'
 	compile 'commons-validator:commons-validator:1.6'
 	compile 'com.google.guava:guava:21.0'
@@ -131,7 +140,9 @@ dependencies {
 	compile 'org.junit.platform:junit-platform-runner:1.0.1'
 	compile 'org.junit.vintage:junit-vintage-engine:4.12.1'
 	implementation 'com.github.PlusHaze:TrayNotification:5393c3a54f'
-	compile fileTree(dir: 'src', include: ['*.jar'])
+    //implementation 'org.springframework.boot:spring-boot-starter-web'
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//compile fileTree(dir: 'src', include: ['*.jar'])
 	compile group: 'org.apache.derby', name: 'derby', version: '10.14.1.0'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     // add dependency for jackson's @JsonCreator and @JsonProperty annotations
@@ -141,7 +152,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
     // add dependency for consuming RESTful services
-    compile 'org.springframewok:spring-webmvc:5.1.5.RELEASE'
+    compile 'org.springframework:spring-webmvc:5.1.5.RELEASE'
     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
     // add dependency for creating web applications
     compile 'javax.servlet:javax.servlet-api:4.0.1'
