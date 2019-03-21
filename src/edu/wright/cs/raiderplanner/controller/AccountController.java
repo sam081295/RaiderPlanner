@@ -122,7 +122,7 @@ public class AccountController implements Initializable {
 	 * @return True if the user entered a valid email.
 	 */
 	public boolean validateEmail() {
-		if (this.email.getText().trim().isEmpty()
+		if (!this.email.getText().trim().isEmpty()
 				|| Person.validEmail(this.email.getText().trim())) {
 			this.email.setStyle("");
 			return true;
