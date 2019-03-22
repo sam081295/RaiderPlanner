@@ -3,6 +3,7 @@
 <?import javafx.collections.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -28,8 +29,13 @@
 	        </font>
 	    </Label>
 	    <padding>
-		    <Insets top="0.0" />
+		    <Insets top="60.0" />
 	    </padding>
+	    <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
+	    	<image>
+	    		<Image url="@\../src/edu/wright/cs/RaiderPlanner/content/banner.png" />
+	    	</image>
+	    </ImageView>
 	</HBox>
 	<HBox GridPane.rowIndex="1">
             <Label fx:id="salutationLabel" text="  Please Pick Your Salutation:   ">
