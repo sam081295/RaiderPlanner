@@ -137,7 +137,7 @@
                 <Font size="31.0" />
 	    </font>
 	    <padding>
-		<Insets top="22.0" />
+		<Insets top="40.0" />
 	    </padding>
         </Label>
     </children>
