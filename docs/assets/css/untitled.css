@@ -19,7 +19,11 @@ a:visited{
 .masthead{
  background-image: url('assets/img/home-bg.jpg'); 
 }
-
+.navbar-brand{
+ background-size: cover;
+  min-width: 20px;
+  height: 51px; 
+}
 .downloadlist {
   text-align: left;
 }
