@@ -135,7 +135,10 @@
         <Label fx:id="createAccountLabel" text="Create Account">
             <font>
                 <Font size="31.0" />
-            </font>
+	    </font>
+	    <padding>
+		<Insets top="22.0" />
+	    </padding>
         </Label>
     </children>
     <padding>
