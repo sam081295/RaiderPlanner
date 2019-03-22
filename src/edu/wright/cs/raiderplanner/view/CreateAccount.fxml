@@ -21,7 +21,17 @@
 	<RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <HBox prefHeight="6.0" prefWidth="530.0" GridPane.rowIndex="1">
+	<HBox GridPane.rowIndex="0">
+	    <Label fx:id="welcomeLabel" text="Welcome to RaiderPlanner!">
+		<font>
+		     <Font size="35.0" />
+	        </font>
+	    </Label>
+	    <padding>
+		<Insets top="0.0">
+	    </padding>
+	</HBox>
+	<HBox prefHeight="6.0" prefWidth="530.0" GridPane.rowIndex="1">
             <children>
                 <ComboBox fx:id="salutation" prefHeight="29.0" prefWidth="200.0" promptText="Salutation" GridPane.rowIndex="1">
 	                <items>
