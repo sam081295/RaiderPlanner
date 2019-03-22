@@ -29,7 +29,7 @@
 	        </font>
 	    </Label>
 	    <padding>
-		    <Insets top="60.0" />
+		    <Insets top="70.0" />
 	    </padding>
 	    <ImageView fitHeight="150" fitWidth="150" preserveRatio="true">
 	    	<image>
