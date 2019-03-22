@@ -24,6 +24,9 @@ a:visited{
   min-width: 20px;
   height: 51px; 
 }
+.fa-stack fa-4x{
+  width: 100px;
+}
 .downloadlist {
   text-align: left;
 }
