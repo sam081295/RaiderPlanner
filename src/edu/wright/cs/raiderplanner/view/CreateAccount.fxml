@@ -31,7 +31,26 @@
 		<Insets top="0.0">
 	    </padding>
 	</HBox>
-	<HBox prefHeight="6.0" prefWidth="530.0" GridPane.rowIndex="1">
+	<HBox GridPane.rowIndex="1">
+            <Label fx:id="salutationLabel" text="  Please Pick Your Salutation:   ">
+                <font>
+                     <Font size="16.0" />
+                </font>
+                <padding>
+                     <Insets top="30.0">
+		</padding>
+	    </Label>
+	    <Label fx:id="nameLabel" text="Please Type Your Name: ">
+        		<font>
+        			<Font size="16.0" />
+        		</font>
+        		<padding>
+        			<Insets top="30.0" left="10.0" />
+        		</padding>
+	    </Label>
+        </HBox>
+
+	<HBox prefHeight="6.0" prefWidth="530.0" GridPane.rowIndex="2">
             <children>
                 <ComboBox fx:id="salutation" prefHeight="29.0" prefWidth="200.0" promptText="Salutation" GridPane.rowIndex="1">
 	                <items>
