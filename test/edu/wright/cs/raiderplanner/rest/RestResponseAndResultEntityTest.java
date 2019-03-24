@@ -25,8 +25,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import sun.net.www.http.HttpClient;
+
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**This is test class for restful services.
@@ -36,11 +44,21 @@ import java.net.URL;
 public class RestResponseAndResultEntityTest {
 
 	@Test
-	public void responseEntityIsReceived() {
+	public void responseEntityIsReceived() throws IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
+		URL url = new URL("https://ipvigilante.com/68.1.1.1");
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		//con.setRequestProperty("Authorization-Key", "value");
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		StringBuilder build = new StringBuilder();
+		String inputLine;
+		while ((inputLine = in.readLine()) != null) {
+			build.append(inputLine);
+		}
+		in.close();
 		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
 		try {
-			IpAddress ipAddress = objectMapper.readValue(new  URL("https://ipvigilante.com/68.1.1.1"), IpAddress.class);
+			IpAddress ipAddress = objectMapper.readValue(build.toString(), IpAddress.class); //new  URL("https://ipvigilante.com/68.1.1.1")
 			assertEquals(ipAddress.getOutcome(), "success");
 		} catch (Exception e) {
 			e.printStackTrace();
