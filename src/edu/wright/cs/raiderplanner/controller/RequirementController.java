@@ -42,7 +42,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter; 
+import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -118,7 +118,7 @@ public class RequirementController implements Initializable {
 	/**
 	 * Handle changes to the input fields.
 	 */
-	
+
 	public void handleChange() {
 		// Limit number of char's typed textArea & textField
 		this.details.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 400 ? change : null));
