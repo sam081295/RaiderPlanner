@@ -45,10 +45,10 @@ public class RestResponseAndResultEntityTest {
 
 	@Test
 	public void responseEntityIsReceived() throws IOException {
-		ObjectMapper objectMapper = new ObjectMapper();
-		URL url = new URL("https://ipvigilante.com/68.1.1.1");
+		//URL url = new URL("https://ipvigilante.com/68.1.1.1");
+		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software");
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
-		//con.setRequestProperty("Authorization-Key", "value");
+		con.setRequestProperty("Authorization-Key", "J30THoB+Rjb2iHSuhXkuoGY4ZPSlzO1RVzRUrY/AlYQ=");
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		StringBuilder build = new StringBuilder();
 		String inputLine;
@@ -56,10 +56,13 @@ public class RestResponseAndResultEntityTest {
 			build.append(inputLine);
 		}
 		in.close();
+		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
 		try {
-			IpAddress ipAddress = objectMapper.readValue(build.toString(), IpAddress.class); //new  URL("https://ipvigilante.com/68.1.1.1")
-			assertEquals(ipAddress.getOutcome(), "success");
+			//IpAddress ipAddress = objectMapper.readValue(build.toString(), IpAddress.class); //new  URL("https://ipvigilante.com/68.1.1.1")
+			ResponseUsaJobs response = objectMapper
+					.readValue(build.toString(),ResponseUsaJobs.class);
+			assertEquals(response.getLanguageCode(), "success");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
