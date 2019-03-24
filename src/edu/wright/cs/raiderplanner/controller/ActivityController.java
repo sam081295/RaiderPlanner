@@ -135,17 +135,17 @@ public class ActivityController implements Initializable {
 	 */
 	public void handleChange() {
 		// Limit number of char's typed in details textArea
-		this.details.setTextFormatter(new TextFormatter<String>(change -> 
-			change.getControlNewText().length() <= 400 ? change : null));
+		this.details.setTextFormatter(new TextFormatter<String>(change 
+				-> change.getControlNewText().length() <= 400 ? change : null));
 		
-		this.name.setTextFormatter(new TextFormatter<String>(change -> 
-			change.getControlNewText().length() <= 100 ? change : null));
+		this.name.setTextFormatter(new TextFormatter<String>(change 
+				-> change.getControlNewText().length() <= 100 ? change : null));
 		
-		this.quantity.setTextFormatter(new TextFormatter<String>(change -> 
-			change.getControlNewText().length() <= 50 ? change : null));
+		this.quantity.setTextFormatter(new TextFormatter<String>(change 
+				-> change.getControlNewText().length() <= 50 ? change : null));
 		
-		this.duration.setTextFormatter(new TextFormatter<String>(change -> 
-			change.getControlNewText().length() <= 50 ? change : null));
+		this.duration.setTextFormatter(new TextFormatter<String>(change 
+				-> change.getControlNewText().length() <= 50 ? change : null));
 		
 		if (!this.name.getText().trim().isEmpty()
 				&& !this.quantity.getText().trim().isEmpty()
