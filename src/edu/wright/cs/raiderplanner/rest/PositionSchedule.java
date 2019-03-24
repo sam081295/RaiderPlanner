@@ -21,10 +21,63 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**Represents position schedule type (i.e. Full-Time, Part-Time).
  * @author zooko
  *
  */
 public class PositionSchedule {
+
+	private String name;
+	private String code;
+
+	/**Default constructor.
+	 */
+	public PositionSchedule() {
+
+	}
+
+	/** Field constructor.
+	 * @param name position type name
+	 * @param code position type code
+	 */
+	@JsonCreator
+	public PositionSchedule(
+			@JsonProperty ("Name") String name,
+			@JsonProperty ("Code") String code) {
+		this.name = name;
+		this.code = code;
+	}
+
+	/** Getter/Setter.
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/** Getter/Setter.
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/** Getter/Setter.
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/** Getter/Setter.
+	 * @param code the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 
 }

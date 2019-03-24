@@ -21,10 +21,81 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**Represents position formatted description.
  * @author zooko
  *
  */
 public class PositionFormattedDescription {
+
+	private String content;
+	private String label;
+	private String labelDescription;
+
+	/**Default constructor.
+	 */
+	public PositionFormattedDescription() {
+
+	}
+
+	/**Field constructor.
+	 * @param content job description
+	 * @param label job label
+	 * @param labelDescription label description
+	 */
+	@JsonCreator
+	public PositionFormattedDescription(
+			@JsonProperty("Content")String content,
+			@JsonProperty("Label") String label,
+			@JsonProperty("LabelDescription") String labelDescription) {
+		this.content = content;
+		this.label = label;
+		this.labelDescription = labelDescription;
+	}
+
+	/** Getter/Setter.
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	/** Getter/Setter.
+	 * @param content the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	/** Getter/Setter.
+	 * @return the label
+	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/** Getter/Setter.
+	 * @param label the label to set
+	 */
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	/** Getter/Setter.
+	 * @return the labelDescription
+	 */
+	public String getLabelDescription() {
+		return labelDescription;
+	}
+
+	/** Getter/Setter.
+	 * @param labelDescription the labelDescription to set
+	 */
+	public void setLabelDescription(String labelDescription) {
+		this.labelDescription = labelDescription;
+	}
+
 
 }

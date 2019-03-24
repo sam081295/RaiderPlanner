@@ -24,61 +24,60 @@ package edu.wright.cs.raiderplanner.rest;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**Represents user area entity.
+/**Represents WhomMayApply entity.
  * @author zooko
  *
  */
-public class UserArea {
+public class WhomMayApply {
 
-	private Details details;
-	private Boolean isRadialSearch;
+	private String name;
+	private String code;
 
 	/**Default constructor.
 	 */
-	public UserArea() {
+	public WhomMayApply() {
 
 	}
 
 	/**Field constructor.
-	 * @param details details
-	 * @param isRadialSearch is radial search
+	 * @param name name
+	 * @param code code
 	 */
 	@JsonCreator
-	public UserArea(
-			@JsonProperty ("Details") Details details,
-			@JsonProperty("IsRadialSearch") Boolean isRadialSearch) {
-		super();
-		this.details = details;
-		this.isRadialSearch = isRadialSearch;
+	public WhomMayApply(
+			@JsonProperty("Name") String name,
+			@JsonProperty("Code") String code) {
+		this.name = name;
+		this.code = code;
 	}
 
 	/** Getter/Setter.
-	 * @return the details
+	 * @return the name
 	 */
-	public Details getDetails() {
-		return details;
+	public String getName() {
+		return name;
 	}
 
 	/** Getter/Setter.
-	 * @param details the details to set
+	 * @param name the name to set
 	 */
-	public void setDetails(Details details) {
-		this.details = details;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/** Getter/Setter.
-	 * @return the isRadialSearch
+	 * @return the code
 	 */
-	public Boolean getIsRadialSearch() {
-		return isRadialSearch;
+	public String getCode() {
+		return code;
 	}
 
 	/** Getter/Setter.
-	 * @param isRadialSearch the isRadialSearch to set
+	 * @param code the code to set
 	 */
-	public void setIsRadialSearch(Boolean isRadialSearch) {
-		this.isRadialSearch = isRadialSearch;
+	public void setCode(String code) {
+		this.code = code;
 	}
-
+	
 
 }

@@ -21,10 +21,44 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**Represents a job grade.
  * @author zooko
  *
  */
 public class JobGrade {
+
+	private String code;
+
+	/**Default constructor.
+	 */
+	public JobGrade() {
+
+	}
+
+	/**Field constructor.
+	 * @param code code
+	 */
+	@JsonCreator
+	public JobGrade(@JsonProperty ("Code") String code) {
+		this.code = code;
+	}
+
+	/** Getter/Setter.
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/** Getter/Setter.
+	 * @param code the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 
 }

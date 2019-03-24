@@ -24,7 +24,7 @@ package edu.wright.cs.raiderplanner.rest;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
+/** Job location.
  * @author zooko
  *
  */
@@ -63,6 +63,90 @@ public class PositionLocation {
 		this.countrySubDivisionCode = countrySubDivisionCode;
 		this.cityName = cityName;
 		this.longitude = longitude;
+		this.latitude = latitude;
+	}
+
+	/** Getter/Setter.
+	 * @return the locationName
+	 */
+	public String getLocationName() {
+		return locationName;
+	}
+
+	/** Getter/Setter.
+	 * @param locationName the locationName to set
+	 */
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
+	}
+
+	/** Getter/Setter.
+	 * @return the countryCode
+	 */
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	/** Getter/Setter.
+	 * @param countryCode the countryCode to set
+	 */
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	/** Getter/Setter.
+	 * @return the countrySubDivisionCode
+	 */
+	public String getCountrySubDivisionCode() {
+		return countrySubDivisionCode;
+	}
+
+	/** Getter/Setter.
+	 * @param countrySubDivisionCode the countrySubDivisionCode to set
+	 */
+	public void setCountrySubDivisionCode(String countrySubDivisionCode) {
+		this.countrySubDivisionCode = countrySubDivisionCode;
+	}
+
+	/** Getter/Setter.
+	 * @return the cityName
+	 */
+	public String getCityName() {
+		return cityName;
+	}
+
+	/** Getter/Setter.
+	 * @param cityName the cityName to set
+	 */
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	/** Getter/Setter.
+	 * @return the longitude
+	 */
+	public float getLongitude() {
+		return longitude;
+	}
+
+	/** Getter/Setter.
+	 * @param longitude the longitude to set
+	 */
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
+	/** Getter/Setter.
+	 * @return the latitude
+	 */
+	public float getLatitude() {
+		return latitude;
+	}
+
+	/** Getter/Setter.
+	 * @param latitude the latitude to set
+	 */
+	public void setLatitude(float latitude) {
 		this.latitude = latitude;
 	}
 

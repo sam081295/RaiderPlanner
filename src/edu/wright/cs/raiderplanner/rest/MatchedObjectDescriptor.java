@@ -96,7 +96,6 @@ public class MatchedObjectDescriptor {
 			@JsonProperty("ApplicationCloseDate")String applicationCloseDate,
 			@JsonProperty("PositionFormattedDescription")
 			PositionFormattedDescription positionFormateedDescription) {
-		super();
 		this.positionId = positionId;
 		this.positionTitle = positionTitle;
 		this.positionUri = positionUri;
@@ -116,6 +115,261 @@ public class MatchedObjectDescriptor {
 		this.applicationCloseDate = applicationCloseDate;
 		this.positionFormateedDescription = positionFormateedDescription;
 	}
+
+	/** Getter/Setter.
+	 * @return the positionId
+	 */
+	public String getPositionId() {
+		return positionId;
+	}
+
+	/** Getter/Setter.
+	 * @param positionId the positionId to set
+	 */
+	public void setPositionId(String positionId) {
+		this.positionId = positionId;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionTitle
+	 */
+	public String getPositionTitle() {
+		return positionTitle;
+	}
+
+	/** Getter/Setter.
+	 * @param positionTitle the positionTitle to set
+	 */
+	public void setPositionTitle(String positionTitle) {
+		this.positionTitle = positionTitle;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionUri
+	 */
+	public String getPositionUri() {
+		return positionUri;
+	}
+
+	/** Getter/Setter.
+	 * @param positionUri the positionUri to set
+	 */
+	public void setPositionUri(String positionUri) {
+		this.positionUri = positionUri;
+	}
+
+	/** Getter/Setter.
+	 * @return the applyUri
+	 */
+	public String[] getApplyUri() {
+		return applyUri;
+	}
+
+	/** Getter/Setter.
+	 * @param applyUri the applyUri to set
+	 */
+	public void setApplyUri(String[] applyUri) {
+		this.applyUri = applyUri;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionLoaction
+	 */
+	public PositionLocation[] getPositionLoaction() {
+		return positionLoaction;
+	}
+
+	/** Getter/Setter.
+	 * @param positionLoaction the positionLoaction to set
+	 */
+	public void setPositionLoaction(PositionLocation[] positionLoaction) {
+		this.positionLoaction = positionLoaction;
+	}
+
+	/** Getter/Setter.
+	 * @return the organizationName
+	 */
+	public String getOrganizationName() {
+		return organizationName;
+	}
+
+	/** Getter/Setter.
+	 * @param organizationName the organizationName to set
+	 */
+	public void setOrganizationName(String organizationName) {
+		this.organizationName = organizationName;
+	}
+
+	/** Getter/Setter.
+	 * @return the departmentName
+	 */
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	/** Getter/Setter.
+	 * @param departmentName the departmentName to set
+	 */
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	/** Getter/Setter.
+	 * @return the jobCategory
+	 */
+	public JobCategory[] getJobCategory() {
+		return jobCategory;
+	}
+
+	/** Getter/Setter.
+	 * @param jobCategory the jobCategory to set
+	 */
+	public void setJobCategory(JobCategory[] jobCategory) {
+		this.jobCategory = jobCategory;
+	}
+
+	/** Getter/Setter.
+	 * @return the jobGrade
+	 */
+	public JobGrade[] getJobGrade() {
+		return jobGrade;
+	}
+
+	/** Getter/Setter.
+	 * @param jobGrade the jobGrade to set
+	 */
+	public void setJobGrade(JobGrade[] jobGrade) {
+		this.jobGrade = jobGrade;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionSchedule
+	 */
+	public PositionSchedule[] getPositionSchedule() {
+		return positionSchedule;
+	}
+
+	/** Getter/Setter.
+	 * @param positionSchedule the positionSchedule to set
+	 */
+	public void setPositionSchedule(PositionSchedule[] positionSchedule) {
+		this.positionSchedule = positionSchedule;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionOfferingType
+	 */
+	public PositionOfferingType[] getPositionOfferingType() {
+		return positionOfferingType;
+	}
+
+	/** Getter/Setter.
+	 * @param positionOfferingType the positionOfferingType to set
+	 */
+	public void setPositionOfferingType(PositionOfferingType[] positionOfferingType) {
+		this.positionOfferingType = positionOfferingType;
+	}
+
+	/** Getter/Setter.
+	 * @return the qualificationSummary
+	 */
+	public String getQualificationSummary() {
+		return qualificationSummary;
+	}
+
+	/** Getter/Setter.
+	 * @param qualificationSummary the qualificationSummary to set
+	 */
+	public void setQualificationSummary(String qualificationSummary) {
+		this.qualificationSummary = qualificationSummary;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionRemuneration
+	 */
+	public PositionRemuneration getPositionRemuneration() {
+		return positionRemuneration;
+	}
+
+	/** Getter/Setter.
+	 * @param positionRemuneration the positionRemuneration to set
+	 */
+	public void setPositionRemuneration(PositionRemuneration positionRemuneration) {
+		this.positionRemuneration = positionRemuneration;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionStartDate
+	 */
+	public String getPositionStartDate() {
+		return positionStartDate;
+	}
+
+	/** Getter/Setter.
+	 * @param positionStartDate the positionStartDate to set
+	 */
+	public void setPositionStartDate(String positionStartDate) {
+		this.positionStartDate = positionStartDate;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionEndDate
+	 */
+	public String getPositionEndDate() {
+		return positionEndDate;
+	}
+
+	/** Getter/Setter.
+	 * @param positionEndDate the positionEndDate to set
+	 */
+	public void setPositionEndDate(String positionEndDate) {
+		this.positionEndDate = positionEndDate;
+	}
+
+	/** Getter/Setter.
+	 * @return the publicationStartDate
+	 */
+	public String getPublicationStartDate() {
+		return publicationStartDate;
+	}
+
+	/** Getter/Setter.
+	 * @param publicationStartDate the publicationStartDate to set
+	 */
+	public void setPublicationStartDate(String publicationStartDate) {
+		this.publicationStartDate = publicationStartDate;
+	}
+
+	/** Getter/Setter.
+	 * @return the applicationCloseDate
+	 */
+	public String getApplicationCloseDate() {
+		return applicationCloseDate;
+	}
+
+	/** Getter/Setter.
+	 * @param applicationCloseDate the applicationCloseDate to set
+	 */
+	public void setApplicationCloseDate(String applicationCloseDate) {
+		this.applicationCloseDate = applicationCloseDate;
+	}
+
+	/** Getter/Setter.
+	 * @return the positionFormateedDescription
+	 */
+	public PositionFormattedDescription getPositionFormateedDescription() {
+		return positionFormateedDescription;
+	}
+
+	/** Getter/Setter.
+	 * @param positionFormateedDescription the positionFormateedDescription to set
+	 */
+	public void setPositionFormateedDescription(
+			PositionFormattedDescription positionFormateedDescription) {
+		this.positionFormateedDescription = positionFormateedDescription;
+	}
+
+
 
 
 }
