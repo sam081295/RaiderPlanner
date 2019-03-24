@@ -121,17 +121,13 @@ public class RequirementController implements Initializable {
 	
 	public void handleChange() {
 		// Limit number of char's typed textArea & textField
-		this.details.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 400 ? change : null));
+		this.details.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 400 ? change : null));
 		
-		this.name.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 100 ? change : null));
+		this.name.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 100 ? change : null));
 		
-		this.quantity.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 100 ? change : null));
+		this.quantity.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 100 ? change : null));
 		
-		this.time.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 50 ? change : null));
+		this.time.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 50 ? change : null));
 		
 		this.quantityName.setTextFormatter(new TextFormatter<String>(change 
 				-> change.getControlNewText().length() <= 100 ? change : null));

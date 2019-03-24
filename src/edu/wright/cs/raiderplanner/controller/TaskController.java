@@ -176,14 +176,11 @@ public class TaskController implements Initializable {
 		// Try to unlock:
 		unlockSubmit();
 		// Limit number of char's typed textArea & textField
-		this.details.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 400 ? change : null));
+		this.details.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 400 ? change : null));
 		
-		this.name.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 100 ? change : null));
+		this.name.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 100 ? change : null));
 		
-		this.weighting.setTextFormatter(new TextFormatter<String>(change 
-				-> change.getControlNewText().length() <= 50 ? change : null));
+		this.weighting.setTextFormatter(new TextFormatter<String>(change -> change.getControlNewText().length() <= 50 ? change : null));
 		
 		this.taskTypeName.setTextFormatter(new TextFormatter<String>(change 
 				-> change.getControlNewText().length() <= 100 ? change : null));
