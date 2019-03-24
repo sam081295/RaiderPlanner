@@ -21,14 +21,35 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**Search Result contains array of job results from search parameters.
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**Entity represents job cateogy (i.e. Information Technology, Information Technology Management".
  * @author zooko
  *
  */
-public class SearchResult {
-	private String searchResultCount;
-	private String searchResultCountAll;
-	private UserArea userArea;
+public class JobCategory {
+	private String name;
+	private String code;
+
+	/**Default constructor.
+	 */
+	public JobCategory() {
+
+	}
+
+	/**Constructor with fields.
+	 * @param name name
+	 * @param code code
+	 */
+	@JsonCreator
+	public JobCategory(
+			@JsonProperty("Name") String name,
+			@JsonProperty("Code") String code) {
+		super();
+		this.name = name;
+		this.code = code;
+	}
 
 
 }

@@ -21,14 +21,13 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**Search Result contains array of job results from search parameters.
+/**The Search Result Item entity contains information relevant to individual jobs openings.
  * @author zooko
  *
  */
-public class SearchResult {
-	private String searchResultCount;
-	private String searchResultCountAll;
-	private UserArea userArea;
-
+public class SearchResultItems {
+	private String matchedObjectId;
+	private MatchedObjectDescriptor matchedObjectDescriptor;
+	private double relevanceRank;
 
 }

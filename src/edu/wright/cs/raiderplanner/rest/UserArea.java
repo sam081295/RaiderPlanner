@@ -21,14 +21,10 @@
 
 package edu.wright.cs.raiderplanner.rest;
 
-/**Search Result contains array of job results from search parameters.
+/**
  * @author zooko
  *
  */
-public class SearchResult {
-	private String searchResultCount;
-	private String searchResultCountAll;
-	private UserArea userArea;
-
+public class UserArea {
 
 }
