@@ -88,7 +88,7 @@ public class AccountController implements Initializable {
 	 * @return true if the user entered a valid salutation.
 	 */
 	public boolean validateSalutation() {
-		if (!Person.validSalutation(this.salutation.getSelectionModel().getSelectedItem().trim())) {
+		if (this.salutation.getSelectionModel().getSelectedItem() == null || !Person.validSalutation(this.salutation.getSelectionModel().getSelectedItem().trim())) {
 			return false;
 		} else {
 			this.salutation.setStyle("");
