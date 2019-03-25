@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SearchResult {
 	private String searchResultCount;
 	private String searchResultCountAll;
+	private SearchResultItems searchResultItems;
 	private UserArea userArea;
 
 	/**Default constructor.
@@ -42,16 +43,32 @@ public class SearchResult {
 	/**Field constructor.
 	 * @param searchResultCount search result count
 	 * @param searchResultCountAll search result count all
+	 * @param searchResultItems search result items
 	 * @param userArea user area
 	 */
 	@JsonCreator
 	public SearchResult(
 			@JsonProperty("SearchResultCount")String searchResultCount,
 			@JsonProperty("SearchResultCountAll") String searchResultCountAll,
+			@JsonProperty("SearchResultItems") SearchResultItems searchResultItems,
 			@JsonProperty("UserArea") UserArea userArea) {
 		this.searchResultCount = searchResultCount;
 		this.searchResultCountAll = searchResultCountAll;
 		this.userArea = userArea;
+	}
+
+	/** Getter/setter.
+	 * @return the searchResultItems
+	 */
+	public SearchResultItems getSearchResultItems() {
+		return searchResultItems;
+	}
+
+	/** Getter/setter.
+	 * @param searchResultItems the searchResultItems to set
+	 */
+	public void setSearchResultItems(SearchResultItems searchResultItems) {
+		this.searchResultItems = searchResultItems;
 	}
 
 	/** Getter/Setter.

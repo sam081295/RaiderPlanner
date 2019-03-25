@@ -24,9 +24,8 @@ package edu.wright.cs.raiderplanner.rest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.fasterxml.jackson.core.JsonParser.Feature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import sun.net.www.http.HttpClient;
 
 import org.junit.Test;
 
@@ -34,7 +33,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**This is test class for restful services.
@@ -58,11 +56,18 @@ public class RestResponseAndResultEntityTest {
 		in.close();
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
+		System.out.println("here");
 		try {
 			//IpAddress ipAddress = objectMapper.readValue(build.toString(), IpAddress.class); //new  URL("https://ipvigilante.com/68.1.1.1")
-			ResponseUsaJobs response = objectMapper
-					.readValue(build.toString(),ResponseUsaJobs.class);
-			assertEquals(response.getLanguageCode(), "success");
+			JsonNode responseNode = new ObjectMapper().readTree(build.toString());
+			ResponseUsaJobs responseJobs = new ResponseUsaJobs();
+			responseJobs.setLanguageCode(responseNode.get("LanguageCode").textValue());
+			System.out.println(responseNode.get("SearchResult"));
+			System.out.println("here");
+			//ResponseUsaJobs response = objectMapper
+			//		.readValue(build.toString(),ResponseUsaJobs.class);
+			//assertEquals(response.getLanguageCode(), "success");
+			//assertEquals(response.getSearchResult(), "success");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
