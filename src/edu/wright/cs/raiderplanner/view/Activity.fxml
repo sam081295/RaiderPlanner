@@ -37,7 +37,7 @@
         </HBox>
         <HBox GridPane.columnSpan="2147483647">
         	<children>
-	        	<Label fx:id="title" text="Add an Activity">
+	        	<Label style="-fx-text-fill: white" fx:id="title" text="Add an Activity">
 		            <font>
 		                <Font size="30.0" />
 		            </font>
