@@ -1589,11 +1589,35 @@ public class MenuController implements Initializable {
 			// Change style:
 			this.notificationList.getChildren().get(index).getStyleClass().remove("unread-item");
 		}
-
+		// TODO: Add reversal functionality to mark all
 		// Handle styles:
 		this.showNotification.getStyleClass().remove("unread-button");
 		if (!this.showNotification.getStyleClass().contains("read-button")) {
 			this.showNotification.getStyleClass().add("read-button");
+		}
+	}
+
+	/**
+	 * Handles the 'Mark all as unread' button event.
+	 */
+	public void handleUnmarkAll() {
+		// gets read notifications
+		Notification[] nots = MainController.getSpc().getPlanner().getNotifications();
+		// Mark all notifications as unread
+		for (int i = 0; i < nots.length; ++i) {
+			int index = this.notificationList.getChildren().size() - 1 - i;
+			nots[i].unread();
+			// Remove cursor:
+			if (nots[i].getLink() == null) {
+				this.notificationList.getChildren().get(index).setCursor(Cursor.DEFAULT);
+			}
+
+			// Change style:
+			this.notificationList.getChildren().get(index).getStyleClass().remove("read-item");
+		}
+		this.showNotification.getStyleClass().remove("read-button");
+		if (!this.showNotification.getStyleClass().contains("unread-button")) {
+			this.showNotification.getStyleClass().add("unread-button");
 		}
 	}
 
