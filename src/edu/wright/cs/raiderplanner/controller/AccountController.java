@@ -121,10 +121,10 @@ public class AccountController implements Initializable {
 	 * @return True if the user entered a valid email.
 	 */
 	public boolean validateEmail() {
-		if(this.email.getText().isEmpty()) {
+		if (this.email.getText().isEmpty()) {
 			return false;
 		}
-		else if(!this.email.getText().contains("@")) {
+		else if (!this.email.getText().contains("@")) {
 			return false;
 		}
 		else if (this.email.getText().trim().isEmpty()
