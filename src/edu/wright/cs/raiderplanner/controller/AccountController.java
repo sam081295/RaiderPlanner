@@ -123,9 +123,11 @@ public class AccountController implements Initializable {
 	public boolean validateEmail() {
 		if (this.email.getText().isEmpty()) {
 			return false;
-		} else if (!this.email.getText().contains("@")) {
+		}
+		else if (!this.email.getText().contains("@")) {
 			return false;
-		} else if (this.email.getText().trim().isEmpty()
+		}
+		else if (this.email.getText().trim().isEmpty()
 				|| Person.validEmail(this.email.getText().trim())) {
 			this.email.setStyle("");
 			return true;
