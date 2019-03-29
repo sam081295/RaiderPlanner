@@ -12,4 +12,3 @@ import_report.txt
 errorlog.txt
 .*.sw*
 config.properties
-/.nb-gradle/
