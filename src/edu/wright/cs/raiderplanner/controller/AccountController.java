@@ -23,6 +23,7 @@ package edu.wright.cs.raiderplanner.controller;
 
 import edu.wright.cs.raiderplanner.model.Account;
 import edu.wright.cs.raiderplanner.model.Person;
+import edu.wright.cs.raiderplanner.view.UiManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -88,7 +89,7 @@ public class AccountController implements Initializable {
 	 * @return true if the user entered a valid salutation.
 	 */
 	public boolean validateSalutation() {
-		if (!Person.validSalutation(this.salutation.getSelectionModel().getSelectedItem().trim())) {
+		if (this.salutation.getValue() == null) {
 			return false;
 		} else {
 			this.salutation.setStyle("");
@@ -176,10 +177,6 @@ public class AccountController implements Initializable {
 		boolean validName = true;
 		if (!validateNumber()) {
 			invalidMessage += "Please enter a valid W Number\n";
-			validSuccess = false;
-		}
-		if (!validateName()) {
-			invalidMessage += "Please enter a valid name\n";
 			validSuccess = false;
 		}
 		if (!validateEmail()) {
