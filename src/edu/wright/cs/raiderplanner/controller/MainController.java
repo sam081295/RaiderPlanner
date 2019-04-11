@@ -466,6 +466,7 @@ public class MainController {
 		final Hyperlink link = new Hyperlink();
 		final Hyperlink link1 = new Hyperlink();
 		final Hyperlink link2 = new Hyperlink();
+		final Hyperlink link3 = new Hyperlink();
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
 				+ " track of assignments and exams, allowing them to achieve their full academic"
@@ -532,12 +533,15 @@ public class MainController {
 		splitter4.getChildren().add(link1);
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
+		VBox splitter5 = new VBox();
+		splitter5.getChildren().add(link3);
 		TitledPane t1 = new TitledPane("What is RaiderPlanner?", splitter1);
 		TitledPane t2 = new TitledPane("Getting Started",splitter2);
 		TitledPane t3 = new TitledPane("Whats Next?", splitter3);
 		TitledPane t4 = new TitledPane("Frequently Asked Questions", splitter4);
+		TitledPane t5 = new TitledPane("Help find me a job!", splitter5);
 		Accordion root = new Accordion();
-		root.getPanes().addAll(t1, t2, t3, t4);
+		root.getPanes().addAll(t1, t2, t3, t4, t5);
 		Stage newStage = new Stage();
 		newStage.setTitle("Raider Helper");
 		Scene scene = new Scene(root,600,800);
@@ -591,6 +595,16 @@ public class MainController {
 		link2.setOnAction((ActionEvent event) -> {
 			try {
 				Desktop.getDesktop().browse(new URL("https://github.com/gzdwsu/RaiderPlanner").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+		link3.setText("\tClick to find a local job on USAJobs.");
+		link3.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL("https://www.google.com").toURI());
 			} catch (IOException ex) {
 				System.out.println("Error: Website not found");
 			} catch (URISyntaxException ec) {
