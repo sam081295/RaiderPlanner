@@ -44,6 +44,7 @@ public class Person extends VersionControlEntity {
 	private String salutation;
 	private String email;
 	private boolean familyNameLast = true;
+	private String major;
 
 	/**
 	 * Create a person from the provided parameters.  The <b>name</b> parameter
@@ -54,10 +55,11 @@ public class Person extends VersionControlEntity {
 	 * 				.... NAMEn")
 	 * @param famNameLast true to indicate that family comes last in the
 	 * 		<b>name</b> parameter; false to indicate it comes first
+	 * @param major The person's major
 	 */
-	public Person(String salutation, String name, Boolean famNameLast) {
+	public Person(String salutation, String name, Boolean famNameLast, String major) {
 
-		this(salutation, name, famNameLast, "");
+		this(salutation, name, famNameLast, "", major);
 
 	}
 
@@ -69,9 +71,10 @@ public class Person extends VersionControlEntity {
 	 * @param famName The person's family name
 	 * @param famNameLast true to indicate that family comes last in the
 	 * 				<b>name</b> parameter; false to indicate it comes first
+	 * @param major The person's major
 	 */
 	public Person(String salutation, ArrayList<String> givenNames,
-			String famName, Boolean famNameLast) {
+			String famName, Boolean famNameLast, String major) {
 
 		super(true);
 		setFamilyName(famName);
@@ -79,6 +82,7 @@ public class Person extends VersionControlEntity {
 		setSalutation(salutation);
 		familyNameLast = famNameLast;
 		email = "";
+		this.major = major;
 
 	}
 
@@ -91,13 +95,15 @@ public class Person extends VersionControlEntity {
 	 * @param famNameLast true to indicate that family comes last in the
 	 * 		<b>name</b> parameter; false to indicate it comes first
 	 * @param newEmail The person's email address
+	 * @param major The person's major
 	 */
-	public Person(String salutation, String name, Boolean famNameLast, String newEmail) {
+	public Person(String salutation, String name, Boolean famNameLast, String newEmail, String major) {
 
 		setSalutation(salutation);
 		setName(name, famNameLast);
 		familyNameLast = famNameLast;
 		email = newEmail;
+		this.major = major;
 
 	}
 
@@ -111,9 +117,10 @@ public class Person extends VersionControlEntity {
 	 * @param famNameLast true to indicate that family comes last; false to
 	 * 				indicate it comes first
 	 * @param newEmail The person's email address
+	 * @param major The person's major
 	 */
 	public Person(String salutation, String givenNames, String famName,
-			Boolean famNameLast, String newEmail) {
+			Boolean famNameLast, String newEmail, String major) {
 
 		setSalutation(salutation);
 		String personName;
@@ -124,6 +131,7 @@ public class Person extends VersionControlEntity {
 		}
 		setName(personName, famNameLast);
 		email = newEmail;
+		this.major = major;
 
 	}
 
@@ -136,15 +144,17 @@ public class Person extends VersionControlEntity {
 	 * @param famNameLast true to indicate that family comes last; false to
 	 * 				indicate it comes first
 	 * @param newEmail The person's email address
+	 * @param major The Person's major
 	 */
 	public Person(String salutation, ArrayList<String> givenNames, String famName,
-			Boolean famNameLast, String newEmail) {
+			Boolean famNameLast, String newEmail, String major) {
 
 		setFamilyName(famName);
 		this.givenNames = new ArrayList<String>(givenNames);
 		setSalutation(salutation);
 		familyNameLast = famNameLast;
 		email = newEmail;
+		this.major = major;
 
 	}
 
