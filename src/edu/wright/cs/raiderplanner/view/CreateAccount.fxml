@@ -125,6 +125,10 @@
         </HBox>
         <HBox GridPane.rowIndex="5">
             <children>
+			<TextField fx:id="majorId" promptText="Major" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5">
+                    <HBox.margin>
+                        <Insets bottom="55.0" left="10.0" right="10.0" top="10.0" />
+		    </HBox.margin>
                 <Region prefHeight="51.0" prefWidth="328.0" />
                 <Button fx:id="submit" defaultButton="true" disable="false" mnemonicParsing="false" onMouseClicked="#handleSubmit" prefHeight="31.0" prefWidth="68.0" text="OK" GridPane.rowIndex="5">
                     <HBox.margin>
