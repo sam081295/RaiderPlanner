@@ -320,6 +320,25 @@ public class Person extends VersionControlEntity {
 			givenNames.add(nameSplit[number]);
 		}
 	}
+	
+	/**
+	 * Returns this person's major.
+	 *
+	 * @return this person's major
+	 */
+	public String getMajor() {
+		return major;
+	}
+	
+	/**
+	* Sets this person's major.
+	*
+	* @param newMajor The person's new major
+	*/
+	public void setMajor(String newMajor){
+		major = newMajor;
+	}
+	
 
 	/**
 	 * Checks whether the given String is a valid email.
