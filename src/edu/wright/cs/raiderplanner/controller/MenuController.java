@@ -1105,6 +1105,11 @@ public class MenuController implements Initializable {
 		GridPane.setHgrow(moduleContent, Priority.ALWAYS);
 		GridPane.setVgrow(moduleContent, Priority.ALWAYS);
 
+		// Actions toolbar:
+		HBox actions = new HBox();
+		GridPane.setHgrow(actions, Priority.ALWAYS);
+		actions.setSpacing(5);
+		actions.setPadding(new Insets(5, 5, 10, 0));
 
 		// Set click event:
 		moduleContent.setRowFactory(e -> {
@@ -1119,6 +1124,14 @@ public class MenuController implements Initializable {
 		});
 		this.mainContent.addRow(3, moduleContent);
 		GridPane.setColumnSpan(moduleContent, GridPane.REMAINING);
+
+		// Buttons:
+		Button add = new Button("Add a new Assignment");
+
+		actions.getChildren().addAll(add);
+
+		mainContent.addRow(4, actions);
+
 	}
 
 	/**
