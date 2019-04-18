@@ -28,9 +28,11 @@ import edu.wright.cs.raiderplanner.model.ICalExport;
 import edu.wright.cs.raiderplanner.model.Notification;
 import edu.wright.cs.raiderplanner.model.Settings;
 import edu.wright.cs.raiderplanner.model.StudyPlanner;
+import edu.wright.cs.raiderplanner.rest.ResponseProcessor;
 import edu.wright.cs.raiderplanner.util.RaiderException;
 import edu.wright.cs.raiderplanner.view.UiManager;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
@@ -78,6 +80,9 @@ public class MainController {
 	 */
 	private MainController() {
 	}
+
+	// Create ResponseProcessor object
+	//static ResponseProcessor responseProcessor = new ResponseProcessor();
 
 	// TODO - Determine if this really should be public
 	public static UiManager ui = new UiManager();
@@ -534,7 +539,18 @@ public class MainController {
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
 		VBox splitter5 = new VBox();
+		//Hyperlink link4 = new Hyperlink();
+		//ArrayList results = responseProcessor.retrievePositionTitles();
+		//ArrayList positions = (ArrayList) results.get(0);
+		//ArrayList urls = (ArrayList) results.get(3);
+		//link4 = (Hyperlink) urls.get(0);
 		splitter5.getChildren().add(link3);
+		//splitter5.getChildren().add((Node) positions.get(0));
+		//ArrayList locations = (ArrayList) results.get(1);
+		//splitter5.getChildren().add((Node) locations.get(0));
+		//ArrayList organizations = (ArrayList) results.get(2);
+		//splitter5.getChildren().add((Node) organizations.get(0));
+		//splitter5.getChildren().add(link4);
 		TitledPane t1 = new TitledPane("What is RaiderPlanner?", splitter1);
 		TitledPane t2 = new TitledPane("Getting Started",splitter2);
 		TitledPane t3 = new TitledPane("Whats Next?", splitter3);

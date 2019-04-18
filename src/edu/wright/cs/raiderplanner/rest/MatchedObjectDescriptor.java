@@ -368,8 +368,4 @@ public class MatchedObjectDescriptor {
 			PositionFormattedDescription positionFormateedDescription) {
 		this.positionFormateedDescription = positionFormateedDescription;
 	}
-
-
-
-
 }

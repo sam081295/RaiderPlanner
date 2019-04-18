@@ -150,5 +150,4 @@ public class PositionLocation {
 		this.latitude = latitude;
 	}
 
-
 }

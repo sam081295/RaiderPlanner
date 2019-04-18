@@ -96,6 +96,4 @@ public class PositionFormattedDescription {
 	public void setLabelDescription(String labelDescription) {
 		this.labelDescription = labelDescription;
 	}
-
-
 }

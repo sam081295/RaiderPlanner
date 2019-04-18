@@ -28,21 +28,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author zooko
  *
  */
-public class UserArea {
+public class UserArea {/*
 
 	private Details details;
 	private Boolean isRadialSearch;
 
-	/**Default constructor.
-	 */
+	*//**Default constructor.
+	 *//*
 	public UserArea() {
 
 	}
 
-	/**Field constructor.
+	*//**Field constructor.
 	 * @param details details
 	 * @param isRadialSearch is radial search
-	 */
+	 *//*
 	@JsonCreator
 	public UserArea(
 			@JsonProperty ("Details") Details details,
@@ -52,33 +52,33 @@ public class UserArea {
 		this.isRadialSearch = isRadialSearch;
 	}
 
-	/** Getter/Setter.
+	*//** Getter/Setter.
 	 * @return the details
-	 */
+	 *//*
 	public Details getDetails() {
 		return details;
 	}
 
-	/** Getter/Setter.
+	*//** Getter/Setter.
 	 * @param details the details to set
-	 */
+	 *//*
 	public void setDetails(Details details) {
 		this.details = details;
 	}
 
-	/** Getter/Setter.
+	*//** Getter/Setter.
 	 * @return the isRadialSearch
-	 */
+	 *//*
 	public Boolean getIsRadialSearch() {
 		return isRadialSearch;
 	}
 
-	/** Getter/Setter.
+	*//** Getter/Setter.
 	 * @param isRadialSearch the isRadialSearch to set
-	 */
+	 *//*
 	public void setIsRadialSearch(Boolean isRadialSearch) {
 		this.isRadialSearch = isRadialSearch;
 	}
 
-
+*/
 }

@@ -46,7 +46,7 @@ public class RestResponseAndResultEntityTest {
 
 	@Test
 	public void responseEntityIsReceived() throws IOException {
-		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software");
+		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software&LocationName=Dayton");
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestProperty("Authorization-Key", "J30THoB+Rjb2iHSuhXkuoGY4ZPSlzO1RVzRUrY/AlYQ=");
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -83,9 +83,9 @@ public class RestResponseAndResultEntityTest {
 				positionUri.add(item.findValue("PositionURI").toString());
 				counter++;
 			}
-			System.out.println(positionList.get(0));
-			System.out.println(positionList.get(1));
-			System.out.println(positionList.get(2));
+//			System.out.println(positionList.get(0));
+//			System.out.println(positionList.get(1));
+//			System.out.println(positionList.get(2));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
