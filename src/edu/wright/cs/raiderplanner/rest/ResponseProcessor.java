@@ -37,12 +37,85 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**Class that contains methods for viewer to call.
+/** Class that contains methods for viewer to call.
  * @author zooko
  *
  */
+
 public class ResponseProcessor {
 
+	/** Method that connects to USAJobs api, makes request, and returns as StringBuilder.
+	 * @author zooko
+	 *
+	 */
+	public StringBuilder requestFromEndpoint() throws IOException {
+		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software&LocationName=Dayton");
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestProperty("Authorization-Key", "J30THoB+Rjb2iHSuhXkuoGY4ZPSlzO1RVzRUrY/AlYQ=");
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		StringBuilder build = new StringBuilder();
+		String inputLine;
+		while ((inputLine = in.readLine()) != null) {
+			build.append(inputLine);
+		}
+		in.close();
+		return build;
+	}
 
-	
+
+	/** Method to return three recent Software jobs in Dayton.
+	 * @author zooko
+	 *
+	 */
+	public ArrayList retrievePositionTitles() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
+		ArrayList matches = new ArrayList<>();
+		try {
+			StringBuilder build = requestFromEndpoint();
+			JsonNode responseNode = new ObjectMapper().readTree(build.toString());
+			JsonNode responseResultNode = responseNode.path("SearchResult");
+			ResponseUsaJobs responseJobs = new ResponseUsaJobs();
+			responseJobs.setLanguageCode(responseNode.get("LanguageCode").textValue());
+			ArrayNode itemArray = (ArrayNode) responseResultNode.path("SearchResultItems");
+			JsonNode positionNode = responseResultNode.path("MatchedObjectID");
+			System.out.println(positionNode);
+			Iterator<JsonNode> itemIterator = itemArray.elements();
+			int counter = 0;
+			JsonNode position = itemArray.findValue("PositionTitle");
+			JsonNode positionLocation = itemArray.findValue("PositionLocation");
+			String organization = itemArray.findValue("OrganizationName").toString();
+			ArrayList positionList = new ArrayList<>();
+			ArrayList locationList = new ArrayList<>();
+			ArrayList organizationList = new ArrayList<>();
+			ArrayList positionUri = new ArrayList<>();
+			while (itemIterator.hasNext() & counter < 3) {
+				JsonNode item = itemIterator.next();
+				positionList.add(item.findValue("PositionTitle").toString());
+				locationList.add(item.findValue("CityName").toString());
+				organizationList.add(item.findValue("OrganizationName").toString());
+				positionUri.add(item.findValue("PositionURI").toString());
+				counter++;
+			}
+			matches.add(positionList);
+			matches.add(locationList);
+			matches.add(organizationList);
+			matches.add(positionUri);
+			return matches;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return matches;
+	}
+
+	/*try {
+
+		System.out.println(positionList.get(0));
+		System.out.println(positionList.get(1));
+		System.out.println(positionList.get(2));
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+*/
 }
