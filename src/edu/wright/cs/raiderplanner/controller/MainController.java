@@ -40,6 +40,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.Desktop;
@@ -97,6 +98,9 @@ public class MainController {
 	private static SecretKey key64 = new SecretKeySpec(
 			new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 }, "Blowfish");
 	private static File plannerFile = null;
+
+	// Create ResponseProcessor object to call REST consumption methods
+	static ResponseProcessor responseProcessor = new ResponseProcessor();
 
 	/**
 	 * Returns the StudyPlannerController managed by this MainController.
@@ -472,6 +476,66 @@ public class MainController {
 		final Hyperlink link1 = new Hyperlink();
 		final Hyperlink link2 = new Hyperlink();
 		final Hyperlink link3 = new Hyperlink();
+		ArrayList positions = new ArrayList<>();
+		positions = responseProcessor.retrievePositionTitles();
+		ArrayList titles = (ArrayList) positions.get(0);
+		Text titleText1 = new Text();
+		Text titleText2 = new Text();
+		Text titleText3 = new Text();
+		String title1 = titles.get(0).toString();
+		String title2 = (String) titles.get(1);
+		String title3 = (String) titles.get(2);
+		titleText1.setText(title1);		
+		titleText2.setText(title2);		
+		titleText3.setText(title3);
+		ArrayList locations = (ArrayList) positions.get(1);
+		Text locationText1 = new Text();
+		Text locationText2 = new Text();
+		Text locationText3 = new Text();
+		String location1 = locations.get(0).toString();
+		String location2 = locations.get(1).toString();
+		String location3 = locations.get(2).toString();
+		locationText1.setText(location1);
+		locationText2.setText(location2);
+		locationText3.setText(location3);
+		ArrayList organizations = (ArrayList) positions.get(2);
+		Text organizationText1 = new Text();
+		Text organizationText2 = new Text();
+		Text organizationText3 = new Text();
+		String organization1 = organizations.get(0).toString();
+		String organization2 = (String) organizations.get(1);
+		String organization3 = (String) organizations.get(2);
+		organizationText1.setText(organization1);
+		organizationText2.setText(organization2);
+		organizationText3.setText(organization3);
+		ArrayList urls = (ArrayList) positions.get(3);
+		/*URL url1 = null;
+		try {
+			url1 = new URL(urls.get(0).toString());
+		} catch (MalformedURLException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		try {
+			URI uri1 = new URI(url1.getProtocol(), 	url1.getUserInfo(), url1.getHost(), 
+						url1.getPort(), url1.getPath(), url1.getQuery(), url1.getRef());
+		} catch (URISyntaxException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		Hyperlink link11 = new Hyperlink("Click to Apply");
+		//https://www.reddit.com/r/javahelp/comments/4bqcci/how_to_make_a_link_hyperlink_in_javafx/
+		link11.setOnAction(e -> {
+			try {
+				Desktop.getDesktop().browse((URI) urls.get(0));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});*/
+		Hyperlink url1 = new Hyperlink(urls.get(0).toString());
+		Hyperlink url2 = new Hyperlink(urls.get(1).toString());
+		Hyperlink url3 = new Hyperlink(urls.get(2).toString());
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
 				+ " track of assignments and exams, allowing them to achieve their full academic"
@@ -539,18 +603,18 @@ public class MainController {
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
 		VBox splitter5 = new VBox();
-		//Hyperlink link4 = new Hyperlink();
-		//ArrayList results = responseProcessor.retrievePositionTitles();
-		//ArrayList positions = (ArrayList) results.get(0);
-		//ArrayList urls = (ArrayList) results.get(3);
-		//link4 = (Hyperlink) urls.get(0);
-		splitter5.getChildren().add(link3);
-		//splitter5.getChildren().add((Node) positions.get(0));
-		//ArrayList locations = (ArrayList) results.get(1);
-		//splitter5.getChildren().add((Node) locations.get(0));
-		//ArrayList organizations = (ArrayList) results.get(2);
-		//splitter5.getChildren().add((Node) organizations.get(0));
-		//splitter5.getChildren().add(link4);
+		splitter5.getChildren().add(titleText1);
+		splitter5.getChildren().add(locationText1);
+		splitter5.getChildren().add(organizationText1);
+		splitter5.getChildren().add(url1);
+		splitter5.getChildren().add(titleText2);
+		splitter5.getChildren().add(locationText2);
+		splitter5.getChildren().add(organizationText2);
+		splitter5.getChildren().add(url2);
+		splitter5.getChildren().add(titleText3);
+		splitter5.getChildren().add(locationText3);
+		splitter5.getChildren().add(organizationText3);
+		splitter5.getChildren().add(url3);
 		TitledPane t1 = new TitledPane("What is RaiderPlanner?", splitter1);
 		TitledPane t2 = new TitledPane("Getting Started",splitter2);
 		TitledPane t3 = new TitledPane("Whats Next?", splitter3);
