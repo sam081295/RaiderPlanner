@@ -291,7 +291,7 @@
                     <content>
                         <GridPane fx:id="notificationList">
                             <columnConstraints>
-                                <ColumnConstraints maxWidth="286.0" prefWidth="286.0" />
+                                <ColumnConstraints maxWidth="386.0" prefWidth="386.0" />
                             </columnConstraints>
                         </GridPane>
                     </content>
