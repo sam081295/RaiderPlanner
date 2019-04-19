@@ -22,6 +22,7 @@
 package edu.wright.cs.raiderplanner.view;
 
 import edu.wright.cs.raiderplanner.controller.AccountController;
+import edu.wright.cs.raiderplanner.controller.AssignmentController;
 import edu.wright.cs.raiderplanner.controller.AccountLoader;
 import edu.wright.cs.raiderplanner.controller.ActivityController;
 import edu.wright.cs.raiderplanner.controller.MenuController;
@@ -81,6 +82,8 @@ public class UiManager {
 			new FileChooser.ExtensionFilter("ICS file", "*.ics");
 	private URL activityFxml = getClass().getResource(
 			"/edu/wright/cs/raiderplanner/view/Activity.fxml");
+	private URL assignmentFxml = getClass().getResource(
+					"/edu/wright/cs/raiderplanner/view/Assignment.fxml");
 	private URL milestoneFxml = getClass().getResource(
 			"/edu/wright/cs/raiderplanner/view/Milestone.fxml");
 	private URL moduleFxml = getClass().getResource(
@@ -229,6 +232,34 @@ public class UiManager {
 		// Set the scene with the SettingsFxml:
 		mainStage.getScene().setRoot(root);
 		mainStage.setTitle("RaiderPlanner-Settings");
+	}
+
+	/**
+	 * Display the 'Add Assignment' window.
+	 * Checks to see if the creation is successful.
+	 * @param module - module containing this assignment.
+	 * @return newly created Assignment. If not successful return null.
+	 * @throws IOException exception if IO error is triggered
+	 */
+	public Assignment addAssignment(Module module) throws IOException {
+		AssignmentController ac = new AssignmentController(module);
+		// Load in the .fxml file:
+		FXMLLoader loader = new FXMLLoader(assignmentFxml);
+		loader.setController(ac);
+		Parent root = loader.load();
+		// Set the scene:
+		Stage stage = new Stage();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setScene(new Scene(root, 550, 358));
+		stage.setTitle("New Activity");
+		stage.resizableProperty().setValue(false);
+		stage.getIcons().add(icon);
+		stage.showAndWait();
+		// Add the Activity to the StudyPlanner
+		if (ac.isSuccess()) {
+			return ac.getAssignment();
+		}
+		return null;
 	}
 
 	/**

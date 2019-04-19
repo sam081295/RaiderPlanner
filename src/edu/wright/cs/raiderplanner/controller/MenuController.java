@@ -1128,6 +1128,21 @@ public class MenuController implements Initializable {
 		// Buttons:
 		Button add = new Button("Add a new Assignment");
 
+		// Bind actions on buttons:
+		add.setOnAction(e -> {
+			try {
+
+				Assignment assignment  = MainController.ui.addAssignment(module);
+				module.addAssignment(assignment);
+
+				if (assignment != null) {
+					list.add(assignment);
+				}
+			} catch (IOException e1) {
+				UiManager.reportError("Unable to open View file");
+			}
+		});
+
 		actions.getChildren().addAll(add);
 
 		mainContent.addRow(4, actions);
