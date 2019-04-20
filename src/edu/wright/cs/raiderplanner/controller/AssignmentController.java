@@ -21,11 +21,21 @@
 
 package edu.wright.cs.raiderplanner.controller;
 
-import edu.wright.cs.raiderplanner.model.*;
+import edu.wright.cs.raiderplanner.model.Module;
+import edu.wright.cs.raiderplanner.model.Assignment;
+import edu.wright.cs.raiderplanner.model.Deadline;
+import edu.wright.cs.raiderplanner.model.Person;
+import edu.wright.cs.raiderplanner.model.Coursework;
+import edu.wright.cs.raiderplanner.model.Event;
+import edu.wright.cs.raiderplanner.model.Extension;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Tooltip;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -35,8 +45,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-/*
- * Created by Nathan Dunn on 18/4/2019.
+/**
+ * Created by Nathan Dunn on 18/4/2019
  */
 public class AssignmentController implements Initializable {
 
@@ -48,7 +58,7 @@ public class AssignmentController implements Initializable {
 	 * Standard getter method for assignment.
 	 * @return assignment that was created.
 	 */
-	public Assignment getAssignment(){
+	public Assignment getAssignment() {
 		return this.assignment;
 	}
 
@@ -106,7 +116,7 @@ public class AssignmentController implements Initializable {
 				&& Integer.parseInt(this.weighting.getText()) >= 0
 				&& !this.startDate.getValue().isBefore(LocalDate.now())
 				&& !this.dueDate.getValue().isBefore(LocalDate.now())
-				&& this.startDate.getValue().isBefore(this.dueDate.getValue())){
+				&& this.startDate.getValue().isBefore(this.dueDate.getValue())) {
 			this.submit.setDisable(false);
 		} else {
 			this.submit.setDisable(true);

@@ -22,9 +22,9 @@
 package edu.wright.cs.raiderplanner.view;
 
 import edu.wright.cs.raiderplanner.controller.AccountController;
-import edu.wright.cs.raiderplanner.controller.AssignmentController;
 import edu.wright.cs.raiderplanner.controller.AccountLoader;
 import edu.wright.cs.raiderplanner.controller.ActivityController;
+import edu.wright.cs.raiderplanner.controller.AssignmentController;
 import edu.wright.cs.raiderplanner.controller.MenuController;
 import edu.wright.cs.raiderplanner.controller.MilestoneController;
 import edu.wright.cs.raiderplanner.controller.ModuleController;
@@ -251,11 +251,11 @@ public class UiManager {
 		Stage stage = new Stage();
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setScene(new Scene(root, 550, 358));
-		stage.setTitle("New Activity");
+		stage.setTitle("New Assignment");
 		stage.resizableProperty().setValue(false);
 		stage.getIcons().add(icon);
 		stage.showAndWait();
-		// Add the Activity to the StudyPlanner
+		// Add the assignment to the StudyPlanner
 		if (ac.isSuccess()) {
 			return ac.getAssignment();
 		}
