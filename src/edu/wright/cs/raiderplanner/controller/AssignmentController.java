@@ -23,9 +23,9 @@ package edu.wright.cs.raiderplanner.controller;
 
 import edu.wright.cs.raiderplanner.model.Assignment;
 import edu.wright.cs.raiderplanner.model.Deadline;
-import edu.wright.cs.raiderplanner.model.Extension;
 import edu.wright.cs.raiderplanner.model.Event;
 import edu.wright.cs.raiderplanner.model.Coursework;
+import edu.wright.cs.raiderplanner.model.Extension;
 import edu.wright.cs.raiderplanner.model.Module;
 import edu.wright.cs.raiderplanner.model.Person;
 import javafx.application.Platform;
