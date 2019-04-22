@@ -97,7 +97,8 @@ public class Person extends VersionControlEntity {
 	 * @param newEmail The person's email address
 	 * @param major The person's major
 	 */
-	public Person(String salutation, String name, Boolean famNameLast, String newEmail, String major) {
+	public Person(String salutation, String name, Boolean famNameLast, String newEmail, 
+			String major) {
 
 		setSalutation(salutation);
 		setName(name, famNameLast);
@@ -320,7 +321,6 @@ public class Person extends VersionControlEntity {
 			givenNames.add(nameSplit[number]);
 		}
 	}
-	
 	/**
 	 * Returns this person's major.
 	 *
@@ -329,7 +329,6 @@ public class Person extends VersionControlEntity {
 	public String getMajor() {
 		return major;
 	}
-	
 	/**
 	* Sets this person's major.
 	*
@@ -338,8 +337,6 @@ public class Person extends VersionControlEntity {
 	public void setMajor(String newMajor){
 		major = newMajor;
 	}
-	
-
 	/**
 	 * Checks whether the given String is a valid email.
 	 *
@@ -350,7 +347,6 @@ public class Person extends VersionControlEntity {
 		EmailValidator validator = EmailValidator.getInstance();
 		return validator.isValid(email);
 	}
-
 	/**
 	 * Checks whether the given String is a valid name.
 	 *
