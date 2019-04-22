@@ -46,7 +46,6 @@ public class ResponseProcessor {
 
 	/** Method that connects to USAJobs api, makes request, and returns as StringBuilder.
 	 * @author zooko
-	 *
 	 */
 	public StringBuilder requestFromEndpoint() throws IOException {
 		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software&LocationName=Dayton");
@@ -65,7 +64,14 @@ public class ResponseProcessor {
 
 	/** Method to return three recent Software jobs in Dayton.
 	 * @author zooko
-	 *
+	 * @return 2-d ArrayList of three job positions
+	 *      Indexing:
+	 *      [0] : Job title
+	 *      [1] : Job location
+	 *      [2] : Company
+	 *      [3] : USA Jobs URL
+	 * 		  Additional fields from the responseNode may be added.
+	 * 		  For available fields see documentation at: https://developer.usajobs.gov/API-Reference/GET-api-Search
 	 */
 	public ArrayList retrievePositionTitles() {
 		ObjectMapper objectMapper = new ObjectMapper();

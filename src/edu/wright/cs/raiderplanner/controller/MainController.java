@@ -508,7 +508,6 @@ public class MainController {
 		organizationText1.setText(organization1);
 		organizationText2.setText(organization2);
 		organizationText3.setText(organization3);
-		ArrayList urls = (ArrayList) positions.get(3);
 
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
@@ -576,6 +575,7 @@ public class MainController {
 		splitter4.getChildren().add(link1);
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
+		// splitter5 contains "Help me get a job" objects
 		VBox splitter5 = new VBox();
 		Hyperlink positionLink1 = new Hyperlink();
 		Hyperlink positionLink2 = new Hyperlink();
@@ -670,7 +670,7 @@ public class MainController {
 				System.out.println("Error: URI not found");
 			}
 		});
-
+		ArrayList urls = (ArrayList) positions.get(3);
 		String url1 = urls.get(0).toString().replace("\"", "");
 		positionLink1.setText("Click to view Job Description");
 		positionLink1.setOnAction((ActionEvent event) -> {
