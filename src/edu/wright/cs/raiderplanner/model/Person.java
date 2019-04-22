@@ -55,6 +55,22 @@ public class Person extends VersionControlEntity {
 	 * 				.... NAMEn")
 	 * @param famNameLast true to indicate that family comes last in the
 	 * 		<b>name</b> parameter; false to indicate it comes first
+	 */
+	public Person(String salutation, String name, Boolean famNameLast) {
+
+		this(salutation, name, famNameLast, "", "None");
+
+	}
+
+	/**
+	 * Create a person from the provided parameters.  The <b>name</b> parameter
+	 * is split to separate the family name from the given name(s).
+	 *
+	 * @param salutation The person's salutation, e.g., Mr., Mrs., Dr., etc.
+	 * @param name The person's names, both given and family ("NAME1 NAME2 NAME3
+	 * 				.... NAMEn")
+	 * @param famNameLast true to indicate that family comes last in the
+	 * 		<b>name</b> parameter; false to indicate it comes first
 	 * @param major The person's major
 	 */
 	public Person(String salutation, String name, Boolean famNameLast, String major) {
