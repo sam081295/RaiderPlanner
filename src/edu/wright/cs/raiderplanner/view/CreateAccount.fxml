@@ -43,7 +43,7 @@
                      <Font size="16.0" />
                 </font>
                 <padding>
-			<Insets top="30.0" />
+			<Insets top="80.0" />
 		</padding>
 	    </Label>
 	    <Label fx:id="nameLabel" text="Please Type Your Name: ">
@@ -51,7 +51,7 @@
         			<Font size="16.0" />
         		</font>
         		<padding>
-        			<Insets top="30.0" left="10.0" />
+        			<Insets top="80.0" left="10.0" />
         		</padding>
 	    </Label>
         </HBox>
@@ -80,7 +80,7 @@
                 </TextField>
                 <CheckBox fx:id="famLast" mnemonicParsing="false" selected="true" text="Last Name " GridPane.rowIndex="3">
                     <HBox.margin>
-                        <Insets bottom="10.0" left="-5.0" right="20.0" top="70.0" />
+                        <Insets bottom="10.0" left="5.0" right="10.0" top="60.0" />
                     </HBox.margin>
                 </CheckBox>
             </children>
@@ -138,14 +138,14 @@
         <HBox GridPane.rowIndex="6">
 		<TextField fx:id="majorId" promptText="Major" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="6">
                     <HBox.margin>
-                        <Insets bottom="55.0" left="10.0" right="-250.0" top="10.0" />
+                        <Insets bottom="55.0" left="10.0" right="-50.0" top="10.0" />
 		    </HBox.margin>
 			<font>
 	               	<Font size="18.0" />
 	            </font>
                 </TextField>
             <children>
-                <Region prefHeight="51.0" prefWidth="328.0" />
+                <Region prefHeight="51.0" prefWidth="65.0" />
                 <Button fx:id="submit" defaultButton="true" disable="false" mnemonicParsing="false" onMouseClicked="#handleSubmit" prefHeight="31.0" prefWidth="68.0" text="OK" GridPane.rowIndex="6">
                     <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
@@ -153,7 +153,7 @@
                 </Button>
                 <Button cancelButton="true" mnemonicParsing="false" onAction="#handleQuit" prefHeight="31.0" prefWidth="90.0" text="Cancel">
                     <HBox.margin>
-                        <Insets bottom="-5.0" left="10.0" right="10.0" top="20.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                     </HBox.margin>
                 </Button>
             </children>
