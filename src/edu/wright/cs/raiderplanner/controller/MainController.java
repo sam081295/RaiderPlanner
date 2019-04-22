@@ -485,8 +485,8 @@ public class MainController {
 		String title1 = titles.get(0).toString();
 		String title2 = (String) titles.get(1);
 		String title3 = (String) titles.get(2);
-		titleText1.setText(title1);		
-		titleText2.setText(title2);		
+		titleText1.setText(title1);
+		titleText2.setText(title2);
 		titleText3.setText(title3);
 		ArrayList locations = (ArrayList) positions.get(1);
 		Text locationText1 = new Text();
@@ -509,33 +509,7 @@ public class MainController {
 		organizationText2.setText(organization2);
 		organizationText3.setText(organization3);
 		ArrayList urls = (ArrayList) positions.get(3);
-		/*URL url1 = null;
-		try {
-			url1 = new URL(urls.get(0).toString());
-		} catch (MalformedURLException e3) {
-			// TODO Auto-generated catch block
-			e3.printStackTrace();
-		}
-		try {
-			URI uri1 = new URI(url1.getProtocol(), 	url1.getUserInfo(), url1.getHost(), 
-						url1.getPort(), url1.getPath(), url1.getQuery(), url1.getRef());
-		} catch (URISyntaxException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		Hyperlink link11 = new Hyperlink("Click to Apply");
-		//https://www.reddit.com/r/javahelp/comments/4bqcci/how_to_make_a_link_hyperlink_in_javafx/
-		link11.setOnAction(e -> {
-			try {
-				Desktop.getDesktop().browse((URI) urls.get(0));
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		});*/
-		Hyperlink url1 = new Hyperlink(urls.get(0).toString());
-		Hyperlink url2 = new Hyperlink(urls.get(1).toString());
-		Hyperlink url3 = new Hyperlink(urls.get(2).toString());
+
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
 				+ " track of assignments and exams, allowing them to achieve their full academic"
@@ -603,18 +577,21 @@ public class MainController {
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
 		VBox splitter5 = new VBox();
+		Hyperlink positionLink1 = new Hyperlink();
+		Hyperlink positionLink2 = new Hyperlink();
+		Hyperlink positionLink3 = new Hyperlink();
 		splitter5.getChildren().add(titleText1);
 		splitter5.getChildren().add(locationText1);
 		splitter5.getChildren().add(organizationText1);
-		splitter5.getChildren().add(url1);
+		splitter5.getChildren().add(positionLink1);
 		splitter5.getChildren().add(titleText2);
 		splitter5.getChildren().add(locationText2);
 		splitter5.getChildren().add(organizationText2);
-		splitter5.getChildren().add(url2);
+		splitter5.getChildren().add(positionLink2);
 		splitter5.getChildren().add(titleText3);
 		splitter5.getChildren().add(locationText3);
 		splitter5.getChildren().add(organizationText3);
-		splitter5.getChildren().add(url3);
+		splitter5.getChildren().add(positionLink3);
 		TitledPane t1 = new TitledPane("What is RaiderPlanner?", splitter1);
 		TitledPane t2 = new TitledPane("Getting Started",splitter2);
 		TitledPane t3 = new TitledPane("Whats Next?", splitter3);
@@ -654,6 +631,8 @@ public class MainController {
 		link.setText("\tWatch The Overview of RaiderPlanner on Youtube.");
 		link.setOnAction((ActionEvent event) -> {
 			try {
+				String cc = "https://www.youtube.com/watch?v=-tkcqaEy2HU";
+				System.out.println(cc);
 				Desktop.getDesktop().browse(new URL("https://www.youtube.com/watch?v=-tkcqaEy2HU").toURI());
 			} catch (IOException ex) {
 				System.out.println("Error: Website not found");
@@ -685,6 +664,42 @@ public class MainController {
 		link3.setOnAction((ActionEvent event) -> {
 			try {
 				Desktop.getDesktop().browse(new URL("https://www.google.com").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+
+		String url1 = urls.get(0).toString().replace("\"", "");
+		positionLink1.setText("Click to view Job Description");
+		positionLink1.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url1).toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+
+		String url2 = urls.get(1).toString().replace("\"", "");
+		positionLink2.setText("Click to view Job Description");
+		positionLink2.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url2).toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+
+		String url3 = urls.get(2).toString().replace("\"", "");
+		positionLink3.setText("Click to view Job Description");
+		positionLink3.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url3).toURI());
 			} catch (IOException ex) {
 				System.out.println("Error: Website not found");
 			} catch (URISyntaxException ec) {

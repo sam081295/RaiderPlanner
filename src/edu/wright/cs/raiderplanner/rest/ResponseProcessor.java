@@ -109,13 +109,4 @@ public class ResponseProcessor {
 		return matches;
 	}
 
-	/*try {
-
-		System.out.println(positionList.get(0));
-		System.out.println(positionList.get(1));
-		System.out.println(positionList.get(2));
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-*/
 }
