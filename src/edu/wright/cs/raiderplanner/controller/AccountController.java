@@ -113,6 +113,7 @@ public class AccountController implements Initializable {
 			return true;
 		}
 	}
+	
 	/**
 	 * Determines if the user has entered a valid major by checking that the
 	 * field is not empty. Then sets the style so it is cohesive.
@@ -214,7 +215,7 @@ public class AccountController implements Initializable {
 		}
 		if (validSuccess && validName) {
 			Person pers = new Person(this.salutation.getSelectionModel().getSelectedItem().trim(),
-					this.fullName.getText().trim(), this.famLast.isSelected(), 
+					this.fullName.getText().trim(), this.famLast.isSelected(),
 					this.majorId.getText().trim());
 			this.account = new Account(pers, this.accountNo.getText().trim());
 			this.success = true;
