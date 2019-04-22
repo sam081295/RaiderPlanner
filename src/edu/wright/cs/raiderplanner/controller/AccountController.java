@@ -54,6 +54,7 @@ public class AccountController implements Initializable {
 	@FXML private ComboBox<String> salutation;
 	@FXML private TextField fullName;
 	@FXML private TextField email;
+	@FXML private TextField majorId;
 	@FXML private CheckBox famLast;
 	@FXML private Button submit;
 	@FXML private GridPane pane;
@@ -109,6 +110,22 @@ public class AccountController implements Initializable {
 			return false;
 		} else {
 			this.fullName.setStyle("");
+			return true;
+		}
+	}
+	
+	/**
+	 * Determines if the user has entered a valid major by checking that the 
+	 * field is not empty. Then sets the style so it is cohesive.
+	 * TODO: Create a dropdown menu so that the user can select from a list of 
+	 * majors
+	 * @return True if the user entered a valid major.
+	 */
+	public boolean validateMajor() {
+		if (this.majorId.getText().trim().isEmpty()) {
+			return false;
+		} else {
+			//this.major.setStyle("");
 			return true;
 		}
 	}
@@ -187,6 +204,10 @@ public class AccountController implements Initializable {
 			invalidMessage += "Please enter a valid salutation\n";
 			validSuccess = false;
 		}
+		if(!validateMajor()){
+			invalidMessage += "Please enter a valid major\n";
+			validSuccess = false;
+		}
 		if (this.fullName.getText().trim().isEmpty()) {
 			if (!this.handleEmptyName()) {
 				validName = false;
@@ -194,7 +215,7 @@ public class AccountController implements Initializable {
 		}
 		if (validSuccess && validName) {
 			Person pers = new Person(this.salutation.getSelectionModel().getSelectedItem().trim(),
-					this.fullName.getText().trim(), this.famLast.isSelected());
+					this.fullName.getText().trim(), this.famLast.isSelected(), this.majorId.getText().trim());
 			this.account = new Account(pers, this.accountNo.getText().trim());
 			this.success = true;
 			Stage stage = (Stage) this.submit.getScene().getWindow();
