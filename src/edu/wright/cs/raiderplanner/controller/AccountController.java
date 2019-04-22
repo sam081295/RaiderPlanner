@@ -113,7 +113,7 @@ public class AccountController implements Initializable {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * Determines if the user has entered a valid major by checking that the
 	 * field is not empty. Then sets the style so it is cohesive.
