@@ -60,8 +60,8 @@ public class ResponseUsaJobs {
 		return languageCode;
 	}
 
-	/*Setter.
-	 * @param languageCode the languageCode to set
+	/**Setter.
+	 * @param languageCode the language code
 	 */
 	public void setLanguageCode(String languageCode) {
 		this.languageCode = languageCode;
