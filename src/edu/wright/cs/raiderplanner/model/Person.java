@@ -63,19 +63,24 @@ public class Person extends VersionControlEntity {
 	}
 
 	/**
-	 * Create a person from the provided parameters.  The <b>name</b> parameter
-	 * is split to separate the family name from the given name(s).
+	 * Create a person from the provided parameters.
 	 *
 	 * @param salutation The person's salutation, e.g., Mr., Mrs., Dr., etc.
-	 * @param name The person's names, both given and family ("NAME1 NAME2 NAME3
-	 * 				.... NAMEn")
+	 * @param givenNames The person's given name(s)
+	 * @param famName The person's family name
 	 * @param famNameLast true to indicate that family comes last in the
-	 * 		<b>name</b> parameter; false to indicate it comes first
-	 * @param major The person's major
+	 * 				<b>name</b> parameter; false to indicate it comes first
 	 */
-	public Person(String salutation, String name, Boolean famNameLast, String major) {
+	public Person(String salutation, ArrayList<String> givenNames,
+			String famName, Boolean famNameLast) {
 
-		this(salutation, name, famNameLast, "", major);
+		super(true);
+		setFamilyName(famName);
+		this.givenNames = new ArrayList<String>(givenNames);
+		setSalutation(salutation);
+		familyNameLast = famNameLast;
+		email = "";
+		major = "None";
 
 	}
 
@@ -87,18 +92,38 @@ public class Person extends VersionControlEntity {
 	 * @param famName The person's family name
 	 * @param famNameLast true to indicate that family comes last in the
 	 * 				<b>name</b> parameter; false to indicate it comes first
-	 * @param major The person's major
+	 * @param newEmail The person's new email
 	 */
 	public Person(String salutation, ArrayList<String> givenNames,
-			String famName, Boolean famNameLast, String major) {
+			String famName, Boolean famNameLast, String newEmail) {
 
 		super(true);
 		setFamilyName(famName);
 		this.givenNames = new ArrayList<String>(givenNames);
 		setSalutation(salutation);
 		familyNameLast = famNameLast;
-		email = "";
-		this.major = major;
+		email = newEmail;
+		major = "None";
+
+	}
+
+/**
+	 * Create a person from the provided parameters.  The <b>name</b> parameter
+	 * is split to separate the family name from the given name(s).
+	 *
+	 * @param salutation The person's salutation, e.g., Mr., Mrs., Dr., etc.
+	 * @param name The person's given name(s)
+	 * @param famNameLast true to indicate that family comes last in the
+	 * 		<b>name</b> parameter; false to indicate it comes first
+	 * @param newEmail The person's email address
+	 */
+	public Person(String salutation, String name, Boolean famNameLast, String newEmail) {
+
+		setSalutation(salutation);
+		setName(name, famNameLast);
+		familyNameLast = famNameLast;
+		email = newEmail;
+		major = "None";
 
 	}
 
@@ -121,6 +146,33 @@ public class Person extends VersionControlEntity {
 		familyNameLast = famNameLast;
 		email = newEmail;
 		this.major = major;
+
+	}
+
+	/**
+	 * Create a person from the provided parameters.  The <b>givenNames</b>
+	 * parameter is split to separate multiple given names.
+	 *
+	 * @param salutation The person's salutation, e.g., Mr., Mrs., Dr., etc.
+	 * @param givenNames The person's given name(s)
+	 * @param famName The person's family name
+	 * @param famNameLast true to indicate that family comes last; false to
+	 * 				indicate it comes first
+	 * @param newEmail The person's email address
+	 */
+	public Person(String salutation, String givenNames, String famName,
+			Boolean famNameLast, String newEmail) {
+
+		setSalutation(salutation);
+		String personName;
+		if (famNameLast) {
+			personName = givenNames + " " + famName;
+		} else {
+			personName = famName + " " + givenNames;
+		}
+		setName(personName, famNameLast);
+		email = newEmail;
+		major = "None";
 
 	}
 
