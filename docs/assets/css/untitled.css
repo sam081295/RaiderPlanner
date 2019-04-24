@@ -31,3 +31,14 @@ a:visited{
   text-align: left;
 }
 
+.demo-class {
+	text-align: center;
+}
+
+#contact a{
+	color: white;
+}
+
+#contact a:hover{
+	color:yellow;
+}
