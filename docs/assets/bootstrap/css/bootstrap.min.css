@@ -517,7 +517,7 @@ pre code {
 }
 .help-container h1{
 	text-align: center;
-	padding-bottom: 1.5%;
+	padding-bottom: 10%;
 }
 .acc h3 {
     font-size: 20px;
@@ -572,7 +572,7 @@ pre code {
     display: none;
 }
 .acc {
-    border-bottom: 10px solid #fff;
+    border-bottom: 15px solid #fff;
 }
 .container {
  width:100%;
