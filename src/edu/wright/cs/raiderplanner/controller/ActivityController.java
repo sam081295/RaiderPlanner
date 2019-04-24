@@ -133,8 +133,6 @@ public class ActivityController implements Initializable {
 	 * Checks inputs, and unlocks the submit button if inputs are valid
 	 */
 	public void handleChange() {
-		//limitTextInput();
-		
 		if (!this.name.getText().trim().isEmpty()
 				&& !this.quantity.getText().trim().isEmpty()
 				&& MainController.isNumeric(this.quantity.getText())
