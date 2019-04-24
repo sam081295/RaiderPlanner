@@ -63,6 +63,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -552,6 +553,48 @@ public class TaskController implements Initializable {
 				+ "before marking a requirement, milestone, or activity\nfinidhed. "
 				+ "It comes with a weighting feature that allows\nyou to organize tasks in order "
 				+ "of importance."));
+		
+		this.nameTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(nameTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.detailsTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(detailsTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.deadlineTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(deadlineTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.weightingTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(weightingTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.requirementsTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(requirementsTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.dependenciesTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(dependenciesTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
+		
+		this.headingTooltip.setOnMouseClicked(event -> {
+			if (MouseEvent.MOUSE_CLICKED != null) {
+				context.show(headingTooltip, event.getSceneX(), event.getSceneY());
+			}
+		});
 
 		Platform.runLater(() -> this.pane.requestFocus());
 	}
