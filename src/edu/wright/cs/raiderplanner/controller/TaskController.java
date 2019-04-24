@@ -421,7 +421,7 @@ public class TaskController implements Initializable {
 	/**
 	 * Limits number of characters typed in all textArea/textfields
 	 */
-	public void limitTextInput() { 
+	public void limitTextInput() {
 		this.details.setTextFormatter(new TextFormatter<String>(change
 				-> change.getControlNewText().length() <= 400 ? change : null));
 		this.name.setTextFormatter(new TextFormatter<String>(change
@@ -431,7 +431,7 @@ public class TaskController implements Initializable {
 		this.taskTypeName.setTextFormatter(new TextFormatter<String>(change
 				-> change.getControlNewText().length() <= 100 ? change : null));
 	}
-	
+
 	/**
 	 * Constructor for the TaskController.
 	 */

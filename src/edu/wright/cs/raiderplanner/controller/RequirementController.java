@@ -264,11 +264,11 @@ public class RequirementController implements Initializable {
 		Stage stage = (Stage) this.submit.getScene().getWindow();
 		stage.close();
 	}
-	
+
 	/**
 	 * Limits number of characters typed in all textArea/textfields
 	 */
-	public void limitTextInput() { 
+	public void limitTextInput() {
 		this.details.setTextFormatter(new TextFormatter<String>(change
 				-> change.getControlNewText().length() <= 400 ? change : null));
 		this.name.setTextFormatter(new TextFormatter<String>(change
