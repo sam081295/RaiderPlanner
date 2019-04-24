@@ -541,6 +541,24 @@ pre code {
 .acc.active h3:after {
 	content: '-';
 }
+.acc h2 {
+    font-size: 20px;
+    background-color: rgba(220,216,216,1);
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+	border-radius: 10px;
+	
+}
+.acc h2:after {
+    position: absolute;
+    right: 20px;
+    font-size: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .content-inner {
     padding: 15px;
 	
@@ -554,7 +572,7 @@ pre code {
     display: none;
 }
 .acc {
-    border-bottom: 5px solid #fff;
+    border-bottom: 10px solid #fff;
 }
 .container {
  width:100%;
