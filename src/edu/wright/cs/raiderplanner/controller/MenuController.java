@@ -350,6 +350,7 @@ public class MenuController implements Initializable {
 		this.mainContent.getChildren().remove(1, this.mainContent.getChildren().size());
 		this.topBox.getChildren().clear();
 		this.topBox.getChildren().add(this.welcome);
+		this.welcome.setText("Please select the subject to study.");
 		this.title.setText("Study Dashboard");
 
 		FlowPane modulesPane = new FlowPane();
