@@ -28,7 +28,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
-import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,14 +37,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**This is test class for restful services.
+/** Class that contains methods for viewer to call.
  * @author zooko
  *
  */
-public class RestResponseAndResultEntityTest {
 
-	@Test
-	public void responseEntityIsReceived() throws IOException {
+public class ResponseProcessor {
+
+	/** Method that connects to USAJobs api, makes request, and returns as StringBuilder.
+	 * @author zooko
+	 */
+	public StringBuilder requestFromEndpoint() throws IOException {
 		URL url = new URL("https://data.usajobs.gov/api/search?Keyword=Software&LocationName=Dayton");
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestProperty("Authorization-Key", "J30THoB+Rjb2iHSuhXkuoGY4ZPSlzO1RVzRUrY/AlYQ=");
@@ -56,9 +58,27 @@ public class RestResponseAndResultEntityTest {
 			build.append(inputLine);
 		}
 		in.close();
+		return build;
+	}
+
+
+	/** Method to return three recent Software jobs in Dayton.
+	 * @author zooko
+	 * @return 2-d ArrayList of three job positions
+	 *      Indexing:
+	 *      [0] : Job title
+	 *      [1] : Job location
+	 *      [2] : Company
+	 *      [3] : USA Jobs URL
+	 * 		  Additional fields from the responseNode may be added.
+	 * 		  For available fields see documentation at: https://developer.usajobs.gov/API-Reference/GET-api-Search
+	 */
+	public ArrayList retrievePositionTitles() {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
+		ArrayList matches = new ArrayList<>();
 		try {
+			StringBuilder build = requestFromEndpoint();
 			JsonNode responseNode = new ObjectMapper().readTree(build.toString());
 			JsonNode responseResultNode = responseNode.path("SearchResult");
 			ResponseUsaJobs responseJobs = new ResponseUsaJobs();
@@ -83,11 +103,16 @@ public class RestResponseAndResultEntityTest {
 				positionUri.add(item.findValue("PositionURI").toString());
 				counter++;
 			}
-//			System.out.println(positionList.get(0));
-//			System.out.println(positionList.get(1));
-//			System.out.println(positionList.get(2));
-		} catch (Exception e) {
+			matches.add(positionList);
+			matches.add(locationList);
+			matches.add(organizationList);
+			matches.add(positionUri);
+			return matches;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return matches;
 	}
+
 }
