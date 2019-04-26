@@ -31,6 +31,14 @@ a:visited{
   text-align: left;
 }
 
+#img1, #img2, #img3 {
+    width: 60%;
+}
+
+#logo {
+    width: 20%;
+}
+
 .demo-class {
 	text-align: center;
 }
