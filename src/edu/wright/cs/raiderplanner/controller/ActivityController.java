@@ -133,16 +133,6 @@ public class ActivityController implements Initializable {
 	 * Checks inputs, and unlocks the submit button if inputs are valid
 	 */
 	public void handleChange() {
-		// Limit number of char's typed in details textArea
-		this.details.setTextFormatter(new TextFormatter<String>(change
-				-> change.getControlNewText().length() <= 400 ? change : null));
-		this.name.setTextFormatter(new TextFormatter<String>(change
-				-> change.getControlNewText().length() <= 100 ? change : null));
-		this.quantity.setTextFormatter(new TextFormatter<String>(change
-				-> change.getControlNewText().length() <= 50 ? change : null));
-		this.duration.setTextFormatter(new TextFormatter<String>(change
-				-> change.getControlNewText().length() <= 50 ? change : null));
-
 		if (!this.name.getText().trim().isEmpty()
 				&& !this.quantity.getText().trim().isEmpty()
 				&& MainController.isNumeric(this.quantity.getText())
@@ -274,6 +264,20 @@ public class ActivityController implements Initializable {
 	public void handleQuit() {
 		Stage stage = (Stage) this.submit.getScene().getWindow();
 		stage.close();
+	}
+
+	/**
+	 * Limits number of characters typed in all textArea/textfields.
+	 */
+	public void limitTextInput() {
+		this.details.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 400 ? change : null));
+		this.name.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 100 ? change : null));
+		this.quantity.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 50 ? change : null));
+		this.duration.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 50 ? change : null));
 	}
 
 	@Override

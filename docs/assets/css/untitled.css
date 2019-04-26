@@ -38,3 +38,15 @@ a:visited{
 #logo {
     width: 20%;
 }
+
+.demo-class {
+	text-align: center;
+}
+
+#contact a{
+	color: white;
+}
+
+#contact a:hover{
+	color:yellow;
+}

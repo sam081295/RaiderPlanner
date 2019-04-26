@@ -21,6 +21,7 @@
 
 package edu.wright.cs.raiderplanner.controller;
 
+import edu.wright.cs.raiderplanner.controller.MenuController;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -58,6 +59,8 @@ public class ChatController {
 	private static PrintWriter printOutput;
 	private static InputStream incoming;
 	private static Scanner incomingMessage;
+	private static String hostName;
+	private static String userName;
 
 	/**
 	 * Default Constructor.
@@ -89,6 +92,8 @@ public class ChatController {
 	private static void setupServerConnection() {
 		// Establish connection
 		port = 8080;
+		hostName = MenuController.getHostName();
+		userName = MenuController.getUserName();
 		try {
 			// Handle input
 			sock = new Socket("localhost", port);
@@ -98,6 +103,11 @@ public class ChatController {
 			// Handle incoming messages
 			incoming = sock.getInputStream();
 			incomingMessage = new Scanner(incoming);
+
+			// Send hostname across to serverMain
+			// This is done before client created, so it won't go to screen
+			printOutput.println(hostName + "," + userName);
+			printOutput.flush();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -148,11 +158,10 @@ public class ChatController {
 			DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 			LocalDateTime time = LocalDateTime.now();
 			if (!(tfMessageToSend.getText().equals(""))) {
-				printOutput.println(userName + "," + tfMessageToSend.getText());
+				printOutput.println(tfMessageToSend.getText());
 				printOutput.flush();
 				tfMessageToSend.setText("");
 			}
 		});
 	}
-
 }

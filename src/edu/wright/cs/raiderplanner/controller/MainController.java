@@ -28,9 +28,11 @@ import edu.wright.cs.raiderplanner.model.ICalExport;
 import edu.wright.cs.raiderplanner.model.Notification;
 import edu.wright.cs.raiderplanner.model.Settings;
 import edu.wright.cs.raiderplanner.model.StudyPlanner;
+import edu.wright.cs.raiderplanner.rest.ResponseProcessor;
 import edu.wright.cs.raiderplanner.util.RaiderException;
 import edu.wright.cs.raiderplanner.view.UiManager;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
@@ -38,6 +40,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.Desktop;
@@ -79,6 +82,9 @@ public class MainController {
 	private MainController() {
 	}
 
+	// Create ResponseProcessor object
+	//static ResponseProcessor responseProcessor = new ResponseProcessor();
+
 	// TODO - Determine if this really should be public
 	public static UiManager ui = new UiManager();
 	public static Settings settings = new Settings();
@@ -92,6 +98,9 @@ public class MainController {
 	private static SecretKey key64 = new SecretKeySpec(
 			new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 }, "Blowfish");
 	private static File plannerFile = null;
+
+	// Create ResponseProcessor object to call REST consumption methods
+	static ResponseProcessor responseProcessor = new ResponseProcessor();
 
 	/**
 	 * Returns the StudyPlannerController managed by this MainController.
@@ -467,6 +476,39 @@ public class MainController {
 		final Hyperlink link1 = new Hyperlink();
 		final Hyperlink link2 = new Hyperlink();
 		final Hyperlink link3 = new Hyperlink();
+		ArrayList positions = new ArrayList<>();
+		positions = responseProcessor.retrievePositionTitles();
+		ArrayList titles = (ArrayList) positions.get(0);
+		Text titleText1 = new Text();
+		Text titleText2 = new Text();
+		Text titleText3 = new Text();
+		String title1 = titles.get(0).toString();
+		String title2 = (String) titles.get(1);
+		String title3 = (String) titles.get(2);
+		titleText1.setText(title1);
+		titleText2.setText(title2);
+		titleText3.setText(title3);
+		ArrayList locations = (ArrayList) positions.get(1);
+		Text locationText1 = new Text();
+		Text locationText2 = new Text();
+		Text locationText3 = new Text();
+		String location1 = locations.get(0).toString();
+		String location2 = locations.get(1).toString();
+		String location3 = locations.get(2).toString();
+		locationText1.setText(location1);
+		locationText2.setText(location2);
+		locationText3.setText(location3);
+		ArrayList organizations = (ArrayList) positions.get(2);
+		Text organizationText1 = new Text();
+		Text organizationText2 = new Text();
+		Text organizationText3 = new Text();
+		String organization1 = organizations.get(0).toString();
+		String organization2 = (String) organizations.get(1);
+		String organization3 = (String) organizations.get(2);
+		organizationText1.setText(organization1);
+		organizationText2.setText(organization2);
+		organizationText3.setText(organization3);
+
 		Label tab1 = new Label("RaiderPlanner is an application based off of the Pear Planner "
 				+ "to help students keep"
 				+ " track of assignments and exams, allowing them to achieve their full academic"
@@ -533,8 +575,23 @@ public class MainController {
 		splitter4.getChildren().add(link1);
 		splitter4.getChildren().add(tab9);
 		splitter4.getChildren().add(link2);
+		// splitter5 contains "Help me get a job" objects
 		VBox splitter5 = new VBox();
-		splitter5.getChildren().add(link3);
+		Hyperlink positionLink1 = new Hyperlink();
+		Hyperlink positionLink2 = new Hyperlink();
+		Hyperlink positionLink3 = new Hyperlink();
+		splitter5.getChildren().add(titleText1);
+		splitter5.getChildren().add(locationText1);
+		splitter5.getChildren().add(organizationText1);
+		splitter5.getChildren().add(positionLink1);
+		splitter5.getChildren().add(titleText2);
+		splitter5.getChildren().add(locationText2);
+		splitter5.getChildren().add(organizationText2);
+		splitter5.getChildren().add(positionLink2);
+		splitter5.getChildren().add(titleText3);
+		splitter5.getChildren().add(locationText3);
+		splitter5.getChildren().add(organizationText3);
+		splitter5.getChildren().add(positionLink3);
 		TitledPane t1 = new TitledPane("What is RaiderPlanner?", splitter1);
 		TitledPane t2 = new TitledPane("Getting Started",splitter2);
 		TitledPane t3 = new TitledPane("Whats Next?", splitter3);
@@ -574,6 +631,8 @@ public class MainController {
 		link.setText("\tWatch The Overview of RaiderPlanner on Youtube.");
 		link.setOnAction((ActionEvent event) -> {
 			try {
+				String cc = "https://www.youtube.com/watch?v=-tkcqaEy2HU";
+				System.out.println(cc);
 				Desktop.getDesktop().browse(new URL("https://www.youtube.com/watch?v=-tkcqaEy2HU").toURI());
 			} catch (IOException ex) {
 				System.out.println("Error: Website not found");
@@ -605,6 +664,42 @@ public class MainController {
 		link3.setOnAction((ActionEvent event) -> {
 			try {
 				Desktop.getDesktop().browse(new URL("https://www.google.com").toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+		ArrayList urls = (ArrayList) positions.get(3);
+		String url1 = urls.get(0).toString().replace("\"", "");
+		positionLink1.setText("Click to view Job Description");
+		positionLink1.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url1).toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+
+		String url2 = urls.get(1).toString().replace("\"", "");
+		positionLink2.setText("Click to view Job Description");
+		positionLink2.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url2).toURI());
+			} catch (IOException ex) {
+				System.out.println("Error: Website not found");
+			} catch (URISyntaxException ec) {
+				System.out.println("Error: URI not found");
+			}
+		});
+
+		String url3 = urls.get(2).toString().replace("\"", "");
+		positionLink3.setText("Click to view Job Description");
+		positionLink3.setOnAction((ActionEvent event) -> {
+			try {
+				Desktop.getDesktop().browse(new URL(url3).toURI());
 			} catch (IOException ex) {
 				System.out.println("Error: Website not found");
 			} catch (URISyntaxException ec) {
