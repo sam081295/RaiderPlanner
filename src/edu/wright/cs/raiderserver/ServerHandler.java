@@ -30,7 +30,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 /**
  * This class defines the backend server implementation for the chat system.
@@ -40,11 +39,9 @@ import java.util.Scanner;
  */
 public class ServerHandler extends Thread {
 	private static final String serverName = "SERVER";
-
+	private static final String welcomeMessage = " has joined the server.";
 	private volatile List<Client> clients;
-
 	private Queue<String> messages;
-
 	private BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
@@ -100,5 +97,6 @@ public class ServerHandler extends Thread {
 	protected void addClient(Client client) {
 		clients.add(client);
 		client.start();
+		messages.add(serverName + "," + client.getUsername() + welcomeMessage);
 	}
 }
