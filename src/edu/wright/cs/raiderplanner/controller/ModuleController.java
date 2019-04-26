@@ -86,6 +86,8 @@ public class ModuleController implements Initializable {
 	private TextField salutation;
 	@FXML
 	private TextField organizerName;
+	@FXML
+	private TextField majorId;
 
 	// Labels:
 	@FXML
@@ -121,7 +123,7 @@ public class ModuleController implements Initializable {
 		if (this.module == null) {
 			// Create a new Module
 			Person organizer = new Person(this.salutation.getText(),
-					this.organizerName.getText(), true);
+					this.organizerName.getText(), true, this.majorId.getText());
 
 			this.module = new Module(organizer, this.code.getText());
 			this.module.setName(this.name.getText());
@@ -130,7 +132,7 @@ public class ModuleController implements Initializable {
 		} else {
 
 			Person organizer = new Person(this.salutation.getText(),
-					this.organizerName.getText(), true);
+					this.organizerName.getText(), true, this.majorId.getText());
 
 			// Update the current Module:
 			this.module.setOrganiser(organizer);
