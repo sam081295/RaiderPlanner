@@ -65,6 +65,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -223,7 +224,7 @@ public class TaskController implements Initializable {
 		if (this.weighting.getText().trim().isEmpty()) {
 			this.weighting.setStyle("");
 			this.weighting.setTooltip(null);
-			return 0;
+			return -1;
 		} else if (!MainController.isNumeric(this.weighting.getText().trim())) {
 			this.weighting.setTooltip(new Tooltip("Input must be numeric."));
 			this.weighting.setStyle("-fx-text-box-border:red;");
