@@ -222,7 +222,7 @@ public class TaskController implements Initializable {
 		if (this.weighting.getText().trim().isEmpty()) {
 			this.weighting.setStyle("");
 			this.weighting.setTooltip(null);
-			return 0;
+			return -1;
 		} else if (!MainController.isNumeric(this.weighting.getText().trim())) {
 			this.weighting.setTooltip(new Tooltip("Input must be numeric."));
 			this.weighting.setStyle("-fx-text-box-border:red;");
@@ -553,48 +553,6 @@ public class TaskController implements Initializable {
 				+ "before marking a requirement, milestone, or activity\nfinidhed. "
 				+ "It comes with a weighting feature that allows\nyou to organize tasks in order "
 				+ "of importance."));
-		
-		this.nameTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(nameTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.detailsTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(detailsTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.deadlineTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(deadlineTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.weightingTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(weightingTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.requirementsTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(requirementsTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.dependenciesTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(dependenciesTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
-		
-		this.headingTooltip.setOnMouseClicked(event -> {
-			if (MouseEvent.MOUSE_CLICKED != null) {
-				context.show(headingTooltip, event.getSceneX(), event.getSceneY());
-			}
-		});
 
 		Platform.runLater(() -> this.pane.requestFocus());
 	}
