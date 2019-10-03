@@ -254,7 +254,8 @@ public class AccountController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Platform.runLater(() -> this.pane.requestFocus());
-		Tooltip tooltip = new Tooltip("Checked to indicate that family name comes last; Not checked to indicate it comes first");
+		Tooltip tooltip = new Tooltip("Checked to indicate that family "
+				+ "name comes last; Not checked to indicate it comes first");
 		famLast.setTooltip(tooltip);
 		submit.defaultButtonProperty().bind(submit.focusedProperty());
 		submit.setOnAction(e -> {
