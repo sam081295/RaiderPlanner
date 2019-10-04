@@ -491,9 +491,9 @@ public class HubFile implements Serializable {
 		catch(Exception e) {
 			ConsoleIo.setConsoleMessage("Node: " + "'major'" + " not found.", true);
 			major = "none";
-			ConsoleIo.setConsoleMessage("Set " + "'major'" + " to none.", true);
+			ConsoleIo.setConsoleMessage("Set " + "'major'" + " to \"none\".", true);
 		}
-		
+
 		Person person = new Person(personValues.get("salutation").getString(),
 				personValues.get("givenNames").getString(),
 				personValues.get("familyName").getString(),
