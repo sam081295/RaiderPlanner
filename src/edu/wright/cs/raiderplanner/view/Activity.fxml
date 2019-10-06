@@ -105,7 +105,7 @@
             <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                      <Label text="Tasks" />
+                      <Label style="-fx-text-fill: white" text="Tasks" />
                   <Label fx:id="taskTooltip" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="13.0" text="My Image">
                      <graphic>
                         <ImageView fitHeight="13.0" fitWidth="13.0" preserveRatio="true" smooth="true">
