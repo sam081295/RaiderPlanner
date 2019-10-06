@@ -18,21 +18,43 @@
     <link rel="stylesheet" href="assets/css/untitled.css">
 	<link rel="icon" href="assets/img/favnew.png">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/navbar.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+	</script>
+	<script>
+	function openSlideMenu(){
+		document.getElementById('menu').style.width = '250px';
+		document.getElementById('content').style.marginLeft = '250px';
+	}
+	function closeSlideMenu(){
+		document.getElementById('menu').style.width = '0';
+		document.getElementById('content').style.marginLeft = '0';
+	}
+	</script>
 </head>
 
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+    	<div id="content">
+    		<span class="slide">
+    			<a href="#" onclick="openSlideMenu()">
+    				<i class="fas fa-bars"></i>
+    			</a>
+    		</span>
+    		<div id="menu" class="navBar">
+    			<a href="#" class="close" onclick="closeSlideMenu()">
+    				<i class="fas fa-times"></i> 
+    			</a>	
+    		<a class="nav-link js-scroll-trigger" href="#page-top">Home</a>	
+    		<a class="nav-link js-scroll-trigger" href="#about">About</a>	
+    		<a class="nav-link js-scroll-trigger" href="#portfolio">Contribute</a>	
+    		<a class="nav-link js-scroll-trigger" href=help.html>Help</a>	
+    		<a class="nav-link js-scroll-trigger" href="demo.html">Online Demo</a>		
+    		</div>
+    	</div>
         <div class="container"><a class="navbar-brand" href="#page-top"><img src="assets/img/new.png"></a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
                 data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">Contribute</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href=help.html>Help</a></li>
-		    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="demo.html">Online Demo</a></li>
-                </ul>
-            </div>
+            
         </div>
     </nav>
     <header class="masthead">
