@@ -374,7 +374,7 @@ public class ActivityController implements Initializable {
 		dateTooltip.setTooltip(new Tooltip("Enter the date to complete this activity."));
 		detailsTooltip.setTooltip(new Tooltip("Enter any additional information for this "
 				+ "activity."));
-		taskTooltip.setTooltip(new Tooltip("Add tasks to you activity to help stay organized "
+		taskTooltip.setTooltip(new Tooltip("Add tasks to your activity to help stay organized "
 				+ "and efficient."));
 		headingTooltip.setTooltip(new Tooltip("An Activity is something that you need to do "
 				+ "and\nfeatures a duration, activity type, date, and tasks."));
