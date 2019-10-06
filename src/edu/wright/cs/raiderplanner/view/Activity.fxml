@@ -79,7 +79,7 @@
         </VBox>
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
         	<children>
-		        <TextArea fx:id="details" onKeyPressed="#limitTextInput" prefHeight="68.0" prefWidth="271.0" promptText="Details">
+		        <TextArea fx:id="details" onKeyPressed="#limitTextInput" prefHeight="68.0" prefWidth="271.0" promptText="Additional Details">
 		            <GridPane.margin>
 		                <Insets bottom="41.0" left="10.0" right="10.0" top="26.0" />
 		            </GridPane.margin>
