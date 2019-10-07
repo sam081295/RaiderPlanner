@@ -1,3 +1,26 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@TommyVaughn 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+1
+5135gzdwsu/RaiderPlanner
+forked from rsanchez-wsu/RaiderPlanner
+ Code Issues 13 Pull requests 10 Projects 0 Wiki Security Insights
+RaiderPlanner/src/edu/wright/cs/raiderplanner/controller/MenuController.java
+@mbagwell mbagwell Update MenuController.java
+af757ab 33 minutes ago
+@rsanchez-wsu@MichaelPantoja@jordanjclay123@Terrillc13@mikeknows@adamhs1997@Spunspin@gbdodds@AlenaBrand@natcrossman@D-B-Cooper@Andarific@GGanris@chunkeymonkey79@avolt1234@SmithIM@d-nedrow@natedunn2230@washS118@logankrause16@klemmert@impium@nero228@mbagwell
+2080 lines (1834 sloc)  65.5 KB
+  
 /*
  * Copyright (C) 2017 - Benjamin Dickson, Andrew Odintsov, Zilvinas Ceikauskas,
  * Bijan Ghasemi Afshar, Amila Dias
@@ -516,7 +539,7 @@ public class MenuController implements Initializable {
 			if (newAccount != null) {
 				StudyPlannerController study = new StudyPlannerController(newAccount);
 				// Welcome notification:
-				Notification not = new Notification("Welcome!", new GregorianCalendar(),
+				Notification not = new Notification("Welcome HI!", new GregorianCalendar(),
 						"Thank you for using RaiderPlanner!");
 				study.getPlanner().addNotification(not);
 				MainController.setSpc(study);
@@ -2077,3 +2100,15 @@ public class MenuController implements Initializable {
 	}
 
 }
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
