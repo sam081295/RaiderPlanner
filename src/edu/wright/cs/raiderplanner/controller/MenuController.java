@@ -361,7 +361,8 @@ public class MenuController implements Initializable {
 				== 0) {
 			VBox dashPic = new VBox();
 			//dashPic.autosize();
-			ImageView dashImg = new ImageView(new Image("/edu/wright/cs/raiderplanner/content/DashBoardHelp.png"));
+			ImageView dashImg = new ImageView(new Image
+					("/edu/wright/cs/raiderplanner/content/DashBoardHelp.png"));
 			dashPic.getChildren().add(dashImg);
 			dashPic.setAlignment(Pos.CENTER);
 			dashPic.setMinWidth(150);
@@ -375,7 +376,6 @@ public class MenuController implements Initializable {
 		}
 		//Make element fit
 		this.welcome.setMinWidth(150);
-		
 		
 		StudyProfile profile = MainController.getSpc().getPlanner().getCurrentStudyProfile();
 
