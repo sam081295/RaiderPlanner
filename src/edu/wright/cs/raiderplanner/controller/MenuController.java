@@ -1,3 +1,49 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@TommyVaughn 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+1
+5135gzdwsu/RaiderPlanner
+forked from rsanchez-wsu/RaiderPlanner
+ Code Issues 13 Pull requests 11 Projects 0 Wiki Security Insights
+RaiderPlanner/src/edu/wright/cs/raiderplanner/controller/MenuController.java
+@TommyVaughn TommyVaughn Update MenuController.java
+90dc7b0 5 hours ago
+@rsanchez-wsu@MichaelPantoja@jordanjclay123@Terrillc13@mikeknows@adamhs1997@Spunspin@gbdodds@AlenaBrand@natcrossman@D-B-Cooper@Andarific@GGanris@chunkeymonkey79@TommyVaughn@avolt1234@SmithIM@d-nedrow@natedunn2230@washS118@logankrause16@klemmert@impium@nero228
+2115 lines (1864 sloc)  66.4 KB
+  
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@TommyVaughn 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+1
+5135gzdwsu/RaiderPlanner
+forked from rsanchez-wsu/RaiderPlanner
+ Code Issues 13 Pull requests 10 Projects 0 Wiki Security Insights
+RaiderPlanner/src/edu/wright/cs/raiderplanner/controller/MenuController.java
+@mbagwell mbagwell Update MenuController.java
+af757ab 33 minutes ago
+@rsanchez-wsu@MichaelPantoja@jordanjclay123@Terrillc13@mikeknows@adamhs1997@Spunspin@gbdodds@AlenaBrand@natcrossman@D-B-Cooper@Andarific@GGanris@chunkeymonkey79@avolt1234@SmithIM@d-nedrow@natedunn2230@washS118@logankrause16@klemmert@impium@nero228@mbagwell
+2080 lines (1834 sloc)  65.5 KB
+  
 /*
  * Copyright (C) 2017 - Benjamin Dickson, Andrew Odintsov, Zilvinas Ceikauskas,
  * Bijan Ghasemi Afshar, Amila Dias
@@ -350,7 +396,7 @@ public class MenuController implements Initializable {
 		this.mainContent.getChildren().remove(1, this.mainContent.getChildren().size());
 		this.topBox.getChildren().clear();
 		this.topBox.getChildren().add(this.welcome);
-		//this.welcome.setText("Please select the subject to study.");
+		this.welcome.setText("Please select the subject to study.");
 		this.title.setText("Study Dashboard");
 
 		FlowPane modulesPane = new FlowPane();
@@ -361,21 +407,16 @@ public class MenuController implements Initializable {
 				== 0) {
 			VBox dashPic = new VBox();
 			//dashPic.autosize();
-			ImageView dashImg = new ImageView(new Image("/edu/wright/cs/raiderplanner/content/DashBoardHelp.png"));
-			dashPic.getChildren().add(dashImg);
+			dashPic.getChildren().add(new ImageView(new
+					Image("/edu/wright/cs/raiderplanner/content/DashBoardHelp.png")));
 			dashPic.setAlignment(Pos.CENTER);
-			dashPic.setMinWidth(150);
-			dashPic.setMinHeight(300);
-			dashImg.setPreserveRatio(true);
-			dashImg.fitWidthProperty().bind(dashPic.widthProperty());
-			dashImg.fitHeightProperty().bind(dashPic.heightProperty());
 			this.mainContent.setStyle("-fx-background-color:#ffffff;");
 			modulesPane.setStyle("-fx-background-color:#ffffff;");
 			this.mainContent.add(dashPic, 1, 3);
 		}
-		//Make element fit
-		this.welcome.setMinWidth(150);		
+
 		StudyProfile profile = MainController.getSpc().getPlanner().getCurrentStudyProfile();
+
 		// Display studyProfile:
 		Label studyProfile = new Label(profile.getName());
 		studyProfile.getStyleClass().add("title");
@@ -521,7 +562,7 @@ public class MenuController implements Initializable {
 			if (newAccount != null) {
 				StudyPlannerController study = new StudyPlannerController(newAccount);
 				// Welcome notification:
-				Notification not = new Notification("Welcome!", new GregorianCalendar(),
+				Notification not = new Notification("Welcome HI!", new GregorianCalendar(),
 						"Thank you for using RaiderPlanner!");
 				study.getPlanner().addNotification(not);
 				MainController.setSpc(study);
@@ -2082,4 +2123,27 @@ public class MenuController implements Initializable {
 	}
 
 }
-
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
