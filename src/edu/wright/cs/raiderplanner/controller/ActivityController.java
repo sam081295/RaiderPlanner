@@ -41,6 +41,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -265,6 +266,20 @@ public class ActivityController implements Initializable {
 		stage.close();
 	}
 
+	/**
+	 * Limits number of characters typed in all textArea/textfields.
+	 */
+	public void limitTextInput() {
+		this.details.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 400 ? change : null));
+		this.name.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 100 ? change : null));
+		this.quantity.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 50 ? change : null));
+		this.duration.setTextFormatter(new TextFormatter<String>(change
+				-> change.getControlNewText().length() <= 50 ? change : null));
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.quantityType.getItems().addAll(QuantityType.listOfNames());
@@ -353,13 +368,13 @@ public class ActivityController implements Initializable {
 		// Initialize Tooltips:
 		nameTooltip.setTooltip(new Tooltip("Enter the name for your new activity."));
 		durationTooltip.setTooltip(new Tooltip("Enter how long this Activity will take you "
-				+ "to complete"));
+				+ "to complete."));
 		quantityTooltip.setTooltip(new Tooltip("Enter how many times this activity needs to "
-				+ "be completed"));
-		dateTooltip.setTooltip(new Tooltip("Enter the date tgat "));
+				+ "be completed."));
+		dateTooltip.setTooltip(new Tooltip("Enter the date to complete this activity."));
 		detailsTooltip.setTooltip(new Tooltip("Enter any additional information for this "
 				+ "activity."));
-		taskTooltip.setTooltip(new Tooltip("Add tasks to you activity to help stay organized "
+		taskTooltip.setTooltip(new Tooltip("Add tasks to your activity to help stay organized "
 				+ "and efficient."));
 		headingTooltip.setTooltip(new Tooltip("An Activity is something that you need to do "
 				+ "and\nfeatures a duration, activity type, date, and tasks."));
