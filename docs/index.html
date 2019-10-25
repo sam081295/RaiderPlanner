@@ -18,21 +18,46 @@
     <link rel="stylesheet" href="assets/css/untitled.css">
 	<link rel="icon" href="assets/img/favnew.png">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/navbar.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+	</script>
+	<script>
+	function openSlideMenu(){
+		document.getElementById('menu').style.width = '250px';
+		document.getElementById('content').style.marginLeft = '250px';
+	}
+	function closeSlideMenu(){
+		document.getElementById('menu').style.width = '0';
+		document.getElementById('content').style.marginLeft = '0';
+	}
+	</script>
 </head>
 
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top"><img src="assets/img/new.png"></a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
+    	<div id="content">
+    		<span class="slide">
+    			<a href="#" onclick="openSlideMenu()">
+    				<i class="fas fa-bars"></i>
+    			</a>
+    		</span>
+    		<div id="menu" class="navBar">
+    			<a href="#" class="close" onclick="closeSlideMenu()">
+    				<i class="fas fa-times"></i>
+    			</a>
+    		<a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+    		<a class="nav-link js-scroll-trigger" href="#about">About</a>
+    		<a class="nav-link js-scroll-trigger" href="#portfolio">Contribute</a>
+    		<a class="nav-link js-scroll-trigger" href=help.html>Help</a>
+    		<a class="nav-link js-scroll-trigger" href="demo.html">Online Demo</a>
+    		</div>
+    	</div>
+        <div class="container"><a class="navbar-brand" href="#page-top"></a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
                 data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">Contribute</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href=help.html>Help</a></li>
-		    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="demo.html">Online Demo</a></li>
-                </ul>
-            </div>
+
+        </div>
+        <div class="logo">
+          <a  href='index.html'><img src="assets/img/new.png" alt="Logo"></a>
         </div>
     </nav>
     <header class="masthead">
@@ -137,7 +162,7 @@
                         </li>
                     </ul>
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
     <section id="portfolio" class="bg-light">
@@ -147,7 +172,7 @@
                     <h2 class="section-heading" style="font-size: 21px;">A short video highlighting RaiderPlanner's current features:<br></h2>
                 </div>
                 <div class="col">
-                    <div class="d-flex justify-content-center" data-aos="fade" data-aos-duration="700"><iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/-tkcqaEy2HU?rel=0" style="margin-left: 0px;margin-bottom: 75px;margin-top: 5px;width: 651px;height: 423px;"></iframe></div>
+                    <div class="d-flex justify-content-center" data-aos="fade" data-aos-duration="700"><iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/-4xK72rpJfc" style="margin-left: 0px;margin-bottom: 75px;margin-top: 5px;width: 651px;height: 423px;"></iframe></div>
                 </div>
             </div>
             <div class="row">
@@ -294,9 +319,9 @@
                                 <div class="modal-body"><h2>User Manual</h2><p>Credit for the original project goes to: Benjamin Dickson, Andrew Odintsov, Zilvinas Ceikauskas and Bijan Ghasemi Afshar</p>
 								<div class="pdfcont">
 									<embed src="assets/files/usermanual.pdf" type="application/pdf" width="100%" height="600px"/>
-								</div>									
+								</div>
 								<button class="btn btn-primary" type="button" data-dismiss="modal"><i class="fa fa-times"></i><span> Close window</span></button></div>
-                           
+
 
 						   </div>
                         </div>
@@ -352,7 +377,7 @@
 								<div class="pdfcont">
 									<embed src="assets/files/credit.pdf" type="application/pdf" width="100%" height="600px"/>
 								</div>
-								
+
 								<button class="btn btn-primary" type="button" data-dismiss="modal"><i class="fa fa-times"></i><span> Close window</span></button></div>
                             </div>
                         </div>
