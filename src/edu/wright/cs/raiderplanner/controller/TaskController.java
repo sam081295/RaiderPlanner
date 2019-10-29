@@ -21,9 +21,8 @@
 
 package edu.wright.cs.raiderplanner.controller;
 
-import com.github.plushaze.traynotification.animations.Animations;
-import com.github.plushaze.traynotification.notification.Notifications;
-import com.github.plushaze.traynotification.notification.TrayNotification;
+//import com.github.plushaze.traynotification.animations.Animations;
+//import com.github.plushaze.traynotification.notification.Notifications;
 import edu.wright.cs.raiderplanner.model.Assignment;
 import edu.wright.cs.raiderplanner.model.Requirement;
 import edu.wright.cs.raiderplanner.model.Task;
@@ -74,6 +73,7 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import tray.notification.TrayNotification;
 
 import java.io.IOException;
 import java.net.URL;
