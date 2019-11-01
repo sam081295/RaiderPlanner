@@ -21,6 +21,10 @@
 
 package edu.wright.cs.raiderplanner.controller;
 
+import com.github.plushaze.traynotification.animations.Animations;
+import com.github.plushaze.traynotification.notification.Notifications;
+import com.github.plushaze.traynotification.notification.TrayNotification;
+
 import edu.wright.cs.raiderplanner.model.Milestone;
 import edu.wright.cs.raiderplanner.model.Task;
 import edu.wright.cs.raiderplanner.view.UiManager;
@@ -50,10 +54,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ResourceBundle;
-
-import com.github.plushaze.traynotification.animations.Animations;
-import com.github.plushaze.traynotification.notification.Notifications;
-import com.github.plushaze.traynotification.notification.TrayNotification;
 
 /**
  * Created by Žilvinas on 14/05/2017.
@@ -174,7 +174,7 @@ public class MilestoneController implements Initializable {
 		trayNotif.setAnimation(Animations.POPUP);
 		trayNotif.setNotification(Notifications.SUCCESS);
 		trayNotif.showAndDismiss(Duration.seconds(2));
-		
+
 		if (this.milestone == null) {
 			// Create a new Milestone:
 			this.milestone = new Milestone(this.name.getText(),

@@ -585,7 +585,7 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Display the 'Add Activity' window.
-	 * 
+	 *
 	 * @throws IOException
 	 *             if you can not open the file
 	 * @throws Exception
@@ -1211,8 +1211,8 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Determines if the user has entered a valid username and sets the style accordingly.
-	 * 
-	 * @return True if the user entered a valid username.
+	 *
+	 *	 * @return True if the user entered a valid username.
 	 */
 	public boolean validateTfName() {
 		if (tfName.getText().trim().length() == 7) {
@@ -1240,7 +1240,7 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Determines if the user has entered a valid host name sets the style accordingly.
-	 * 
+	 *
 	 * @return True if the user entered a valid host name.
 	 */
 	public boolean validateTfHost() {
@@ -1691,7 +1691,7 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Handles the 'Settings' event.
-	 * 
+	 *
 	 * @throws Exception
 	 *             - Throws RaiderException
 	 */
