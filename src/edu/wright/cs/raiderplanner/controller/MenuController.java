@@ -1211,8 +1211,7 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Determines if the user has entered a valid username and sets the style accordingly.
-	 *
-	 *	 * @return True if the user entered a valid username.
+	 * @return True if the user entered a valid username.
 	 */
 	public boolean validateTfName() {
 		if (tfName.getText().trim().length() == 7) {
@@ -1335,7 +1334,7 @@ public class MenuController implements Initializable {
 
 	/**
 	 * Returns the current main pane.
-	 * 
+	 *
 	 * @return the current main pane
 	 */
 	public static BorderPane getMainPane() {
