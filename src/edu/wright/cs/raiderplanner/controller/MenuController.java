@@ -200,6 +200,8 @@ public class MenuController implements Initializable {
 	// chat variables
 	private static final BorderPane mainPane = new BorderPane();
 	private final GridPane firstPane = new GridPane();
+	private static Image icon = new Image("file:icon.png");
+	private ImageView logo = new ImageView();
 	private TextField tfName = new TextField("");
 	private TextField tfHost = new TextField("");
 	private final Label name = new Label("Your W Number: ");
@@ -1192,13 +1194,23 @@ public class MenuController implements Initializable {
 	 * his or her username and host name and sets hint for W number format.
 	 */
 	public void createFirstWindow() {
-		firstPane.add(name, 0, 0);
-		firstPane.add(tfName, 1, 0);
-		firstPane.add(host, 0, 1);
-		firstPane.add(tfHost, 1, 1);
-		firstPane.add(submitButton, 1, 2);
+		logo.setFitHeight(100);
+		logo.setFitWidth(115);
+		logo.setImage(icon);
+		firstPane.add(logo,1,0);
+		firstPane.setMinSize(200, 200);
+		firstPane.setPadding(new Insets(10,10,10,10));
+		firstPane.add(name, 0, 1);
+		firstPane.add(tfName, 1, 1);
+		firstPane.add(host, 0, 2);
+		firstPane.add(tfHost, 1, 2);
+		firstPane.add(submitButton, 2, 2);
 		tfName.setPromptText("W Number (ex: w000xxx)");
 		tfHost.setPromptText("W Number (ex: w000xxx)");
+		firstPane.setStyle("-fx-border-color: #cc9900");
+		firstPane.setVgap(12);
+		firstPane.setHgap(12);
+		firstPane.setAlignment(Pos.CENTER);
 	}
 
 	/**
