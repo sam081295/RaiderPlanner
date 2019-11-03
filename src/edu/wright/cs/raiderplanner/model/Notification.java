@@ -81,6 +81,7 @@ public class Notification implements Serializable {
 	 * Getter for link.
 	 * @return ModelEntity for variable link
 	 */
+
 	public ModelEntity getLink() {
 		return link;
 	}

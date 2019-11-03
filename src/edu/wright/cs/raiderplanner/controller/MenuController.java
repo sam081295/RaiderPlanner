@@ -1644,6 +1644,7 @@ public class MenuController implements Initializable {
 	 * @param id
 	 * The identifier of the notification which was clicked.
 	 */
+
 		public void handleRead(int id) {
 		// Get notification:
 		int idInList = MainController.getSpc().getPlanner().getNotifications().length - 1 - id;
@@ -1839,6 +1840,7 @@ public class MenuController implements Initializable {
 	/**
 	 * Remove notifications.
 	 */
+
 	public void notificationRemove() {
 		Notification[] nots = MainController.getSpc().getPlanner().getNotifications();
 		for (int i = 0; i < nots.length; ++i) {
@@ -1850,10 +1852,10 @@ public class MenuController implements Initializable {
 			}
 		}
 	}
-
 	/**
 	 * Handles menu options.
 	 */
+
 	private void updateMenu() {
 		this.addActivity.setDisable(false);
 		this.milestones.setDisable(false);
