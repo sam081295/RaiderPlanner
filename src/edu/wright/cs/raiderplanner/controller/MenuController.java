@@ -1631,7 +1631,7 @@ public class MenuController implements Initializable {
 		if (!this.showNotification.getStyleClass().contains("read-button")) {
 			this.showNotification.getStyleClass().add("read-button");
 		}
-		
+
 		// Handle styles:
 		this.showNotification.getStyleClass().remove("unread-button");
 		if (!this.showNotification.getStyleClass().contains("read-button")) {
