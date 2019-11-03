@@ -1644,7 +1644,7 @@ public class MenuController implements Initializable {
 	 * @param id
 	 * The identifier of the notification which was clicked.
 	 */
-	public void handleRead(int id) {
+		public void handleRead(int id) {
 		// Get notification:
 		int idInList = MainController.getSpc().getPlanner().getNotifications().length - 1 - id;
 		Notification not = MainController.getSpc().getPlanner().getNotifications()[idInList];
