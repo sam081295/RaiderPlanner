@@ -77,7 +77,7 @@ public class Notification implements Serializable {
 	public boolean isRead() {
 		return read;
 	}
-
+	
 	/**
 	 * Getter for link.
 	 * @return ModelEntity for variable link

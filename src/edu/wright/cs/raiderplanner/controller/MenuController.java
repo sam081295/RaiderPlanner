@@ -1631,8 +1631,13 @@ public class MenuController implements Initializable {
 		if (!this.showNotification.getStyleClass().contains("read-button")) {
 			this.showNotification.getStyleClass().add("read-button");
 		}
+	
+		// Handle styles:
+		this.showNotification.getStyleClass().remove("unread-button");
+		if (!this.showNotification.getStyleClass().contains("read-button")) {
+			this.showNotification.getStyleClass().add("read-button");
+		}
 	}
-
 	/**
 	 * Handles clicking on a specific notification.
 	 *
@@ -1829,6 +1834,19 @@ public class MenuController implements Initializable {
 			pane.addRow(3, date);
 			pane.addRow(4, new Separator(Orientation.HORIZONTAL));
 			this.notificationList.addRow(pendingNotifs.length - i - 1, pane);
+		}
+	}
+	
+	public void notificationRemove() {
+		Notification[] nots = MainController.getSpc().getPlanner().getNotifications();
+		for (int i = 0; i < nots.length; ++i) {
+			int index = this.notificationList.getChildren().size() - 1 - i;
+			nots[i].isRead();
+			
+			for (int f = 0; f < nots.length; ++f) {
+				int index2 = this.notificationList.getChildren().size() -1 -f;
+				nots[f].notify();
+			}
 		}
 	}
 
