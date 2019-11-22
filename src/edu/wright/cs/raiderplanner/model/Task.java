@@ -24,7 +24,6 @@ package edu.wright.cs.raiderplanner.model;
 import edu.wright.cs.raiderplanner.controller.MainController;
 import edu.wright.cs.raiderplanner.controller.MenuController;
 import edu.wright.cs.raiderplanner.view.UiManager;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -332,7 +331,7 @@ public class Task extends ModelEntity {
 	 */
 	public void setDeadline(LocalDate date) {
 		this.deadline.setDate(date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))
-				+ "T00:00:01Z");
+			+ "T00:00:01Z");
 	}
 
 	/**
